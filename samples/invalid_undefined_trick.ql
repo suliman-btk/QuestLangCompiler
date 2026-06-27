@@ -1,0 +1,6 @@
+HERO Omar
+STAT aa1
+
+PERFORM greet
+
+THEEND

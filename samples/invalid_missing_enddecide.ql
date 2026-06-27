@@ -1,0 +1,7 @@
+HERO Omar
+STAT aa1
+
+DECIDE aa1 > 0
+    SAY "OK"
+
+THEEND

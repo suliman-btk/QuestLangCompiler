@@ -1,0 +1,10 @@
+HERO Omar
+STAT aa1
+
+DEFINE TRICK greet
+    PERFORM greet
+ENDTRICK
+
+PERFORM greet
+
+THEEND

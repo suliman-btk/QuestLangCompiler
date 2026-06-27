@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="QuestLangCompiler-impl" default="default" basedir="..">
+    <target name="default" depends="jar"/>
+    <target name="-pre-init"/>
+    <target name="-init-private"/>
+    <target name="-init-user"/>
+    <target name="-init-project">
+        <property file="nbproject/project.properties"/>
+    </target>
+    <target name="-do-init" depends="-pre-init,-init-private,-init-user,-init-project">
+        <property name="build.classes.dir" value="build/classes"/>
+        <property name="dist.dir" value="dist"/>
+        <property name="dist.jar" value="${dist.dir}/QuestLangCompiler.jar"/>
+    </target>
+    <target name="init" depends="-do-init"/>
+    <target name="deps-jar" depends="init"/>
+    <target name="-pre-compile" depends="init">
+        <mkdir dir="${build.classes.dir}"/>
+    </target>
+    <target name="compile" depends="-pre-compile">
+        <javac srcdir="${src.dir}" destdir="${build.classes.dir}" includeantruntime="false"
+               source="${javac.source}" target="${javac.target}" encoding="${source.encoding}"/>
+    </target>
+    <target name="-pre-jar" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+    </target>
+    <target name="jar" depends="-pre-jar">
+        <jar destfile="${dist.jar}" basedir="${build.classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+    </target>
+    <target name="run" depends="compile">
+        <java classname="${main.class}" classpath="${build.classes.dir}" fork="true"/>
+    </target>
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+</project>
