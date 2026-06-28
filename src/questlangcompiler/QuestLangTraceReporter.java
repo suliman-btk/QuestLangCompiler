@@ -1,5 +1,6 @@
 package questlangcompiler;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -27,6 +28,10 @@ public final class QuestLangTraceReporter {
 
     public static void printCodeGenerationTrace(List<Token> tokens) {
         new QuestLangTraceReporter(tokens).codeGenerationTrace();
+    }
+
+    public static void printCompilerSummary(List<Token> tokens, Path sourcePath, Path outputPath, String javaCode) {
+        new QuestLangTraceReporter(tokens).compilerSummary(sourcePath, outputPath, javaCode);
     }
 
     private void syntaxTrace() {
@@ -319,6 +324,70 @@ public final class QuestLangTraceReporter {
         }
     }
 
+    private void compilerSummary(Path sourcePath, Path outputPath, String javaCode) {
+        List<List<Token>> lines = sourceLines();
+        SymbolStats symbolStats = collectSymbolStats(lines);
+        int statementCount = countStatements(lines);
+        int trickCount = countLinesStartingWith(lines, TokenType.DEFINE);
+        int optionCount = countLinesStartingWith(lines, TokenType.OPTION);
+        int blockCount = countLinesStartingWith(lines, TokenType.DECIDE)
+                + countLinesStartingWith(lines, TokenType.CHOOSE)
+                + countLinesStartingWith(lines, TokenType.GRIND)
+                + countLinesStartingWith(lines, TokenType.JOURNEY)
+                + trickCount;
+
+        printHeader("Compiler Summary");
+        System.out.println("Source file: " + (sourcePath == null ? "built-in sample" : sourcePath.toString()));
+        System.out.println("Parser type: Top-down recursive-descent parser");
+        System.out.println("Start rule: parseProgram()");
+        System.out.println("Total source lines scanned: " + lines.size());
+        System.out.println("Total tokens scanned: " + countNonEofTokens());
+        System.out.println("Declarations found: " + symbolStats.totalDeclarations()
+                + " (" + symbolStats.numericDeclarations + " numeric, "
+                + symbolStats.textDeclarations + " text)");
+        System.out.println("Tricks defined: " + trickCount);
+        System.out.println("Statements parsed: " + statementCount);
+        System.out.println("Block/compound structures parsed: " + blockCount);
+        System.out.println("CHOOSE options parsed: " + optionCount);
+        System.out.println("Generated target language: Java");
+        System.out.println("Generated Java lines: " + countGeneratedLines(javaCode));
+        System.out.println("Generated file: " + outputPath.toAbsolutePath());
+        System.out.println("Compilation result: SUCCESS");
+
+        System.out.println();
+        System.out.println("Parser Method Flow");
+        System.out.println("------------------");
+        System.out.println("parseProgram()");
+        System.out.println("  -> parseIdSection()");
+        System.out.println("  -> parseDeclSection()");
+        if (trickCount > 0) {
+            System.out.println("  -> parseTrickDef() repeated " + trickCount + " time(s)");
+        }
+        System.out.println("  -> parseStatementList()");
+        for (String method : usedStatementMethods(lines)) {
+            System.out.println("      -> " + method);
+        }
+        System.out.println("  -> THEEND matched");
+
+        System.out.println();
+        System.out.println("Semantic Checks Completed");
+        System.out.println("-------------------------");
+        System.out.println("- Declaration before use");
+        System.out.println("- Duplicate declaration check");
+        System.out.println("- Numeric/text type checking");
+        System.out.println("- Condition expression checking");
+        System.out.println("- CHOOSE option duplicate check");
+        System.out.println("- TRADE same-type variable check");
+        System.out.println("- PERFORM trick definition check");
+
+        System.out.println();
+        System.out.println("Generated Java Preview");
+        System.out.println("----------------------");
+        for (String mapping : usedGenerationMappings(lines)) {
+            System.out.println(mapping);
+        }
+    }
+
     private List<List<Token>> sourceLines() {
         List<List<Token>> lines = new ArrayList<>();
         List<Token> currentLine = new ArrayList<>();
@@ -465,6 +534,170 @@ public final class QuestLangTraceReporter {
         return tokenOfType(line, type) != null;
     }
 
+    private SymbolStats collectSymbolStats(List<List<Token>> lines) {
+        SymbolStats stats = new SymbolStats();
+        for (List<Token> line : lines) {
+            Token first = first(line);
+            if (first.getType() == TokenType.STAT) {
+                stats.numericDeclarations += countTokensOfType(line, TokenType.NUM_ID);
+            } else if (first.getType() == TokenType.TALE) {
+                stats.textDeclarations += countTokensOfType(line, TokenType.TEXT_ID);
+            }
+        }
+        return stats;
+    }
+
+    private int countStatements(List<List<Token>> lines) {
+        int count = 0;
+        for (List<Token> line : lines) {
+            if (isStatementStart(first(line).getType())) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int countLinesStartingWith(List<List<Token>> lines, TokenType type) {
+        int count = 0;
+        for (List<Token> line : lines) {
+            if (first(line).getType() == type) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int countTokensOfType(List<Token> line, TokenType type) {
+        int count = 0;
+        for (Token token : line) {
+            if (token.getType() == type) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int countNonEofTokens() {
+        int count = 0;
+        for (Token token : tokens) {
+            if (token.getType() != TokenType.EOF) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int countGeneratedLines(String javaCode) {
+        if (javaCode == null || javaCode.isEmpty()) {
+            return 0;
+        }
+        return javaCode.split("\\R").length;
+    }
+
+    private boolean isStatementStart(TokenType type) {
+        return type == TokenType.NUM_ID
+                || type == TokenType.TEXT_ID
+                || type == TokenType.GRIND
+                || type == TokenType.JOURNEY
+                || type == TokenType.DECIDE
+                || type == TokenType.CHOOSE
+                || type == TokenType.ASK
+                || type == TokenType.SAY
+                || type == TokenType.TRADE
+                || type == TokenType.PERFORM
+                || type == TokenType.DRAW;
+    }
+
+    private List<String> usedStatementMethods(List<List<Token>> lines) {
+        Set<String> methods = new LinkedHashSet<>();
+        for (List<Token> line : lines) {
+            switch (first(line).getType()) {
+                case NUM_ID:
+                case TEXT_ID:
+                    methods.add("parseAssignment()");
+                    break;
+                case GRIND:
+                case JOURNEY:
+                    methods.add("parseLoop()");
+                    break;
+                case DECIDE:
+                    methods.add("parseConditionStatement()");
+                    break;
+                case CHOOSE:
+                    methods.add("parseChooseStatement()");
+                    break;
+                case ASK:
+                    methods.add("parseInput()");
+                    break;
+                case SAY:
+                    methods.add("parseOutput()");
+                    break;
+                case TRADE:
+                    methods.add("parseTrade()");
+                    break;
+                case PERFORM:
+                    methods.add("parsePerform()");
+                    break;
+                case DRAW:
+                    methods.add("parseDraw()");
+                    break;
+                default:
+                    break;
+            }
+        }
+        return new ArrayList<>(methods);
+    }
+
+    private List<String> usedGenerationMappings(List<List<Token>> lines) {
+        Set<String> mappings = new LinkedHashSet<>();
+        for (List<Token> line : lines) {
+            switch (first(line).getType()) {
+                case ASK:
+                    mappings.add("ASK -> System.out.print + readNumber/readText");
+                    break;
+                case SAY:
+                    mappings.add("SAY -> System.out.println");
+                    break;
+                case DECIDE:
+                    mappings.add("DECIDE/OTHERWISE -> Java if/else");
+                    break;
+                case CHOOSE:
+                    mappings.add("CHOOSE/OPTION -> Java switch/case");
+                    break;
+                case GRIND:
+                    mappings.add(has(line, TokenType.TIMES)
+                            ? "GRIND TIMES -> Java for loop"
+                            : "GRIND UNTIL -> Java do-while loop");
+                    break;
+                case JOURNEY:
+                    mappings.add("JOURNEY -> Java range loop");
+                    break;
+                case TRADE:
+                    mappings.add("TRADE -> temporary variable swap");
+                    break;
+                case PERFORM:
+                    mappings.add("PERFORM -> Java method call");
+                    break;
+                case DRAW:
+                    mappings.add("DRAW -> drawStar/drawBox/drawTriangle helper call");
+                    break;
+                case DEFINE:
+                    mappings.add("DEFINE TRICK -> private Java helper method");
+                    break;
+                case NUM_ID:
+                case TEXT_ID:
+                    mappings.add("Assignment -> Java assignment statement");
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (mappings.isEmpty()) {
+            mappings.add("No executable statements were generated.");
+        }
+        return new ArrayList<>(mappings);
+    }
+
     private String knownType(Token token) {
         if (token == null) {
             return "UNKNOWN";
@@ -499,5 +732,14 @@ public final class QuestLangTraceReporter {
 
     private void trace(String message) {
         System.out.println("[Trace] " + message);
+    }
+
+    private static final class SymbolStats {
+        private int numericDeclarations;
+        private int textDeclarations;
+
+        private int totalDeclarations() {
+            return numericDeclarations + textDeclarations;
+        }
     }
 }

@@ -58,6 +58,7 @@ public class QuestLangCompiler {
             System.out.println("Code Generation");
             System.out.println("---------------");
             System.out.println("Generated Java file: " + outputPath.toAbsolutePath());
+            QuestLangTraceReporter.printCompilerSummary(tokens, sourcePath, outputPath, javaCode);
         } catch (ScannerException ex) {
             System.err.println(ex.getMessage());
             System.exit(1);
