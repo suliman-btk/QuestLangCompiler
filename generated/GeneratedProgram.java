@@ -4,38 +4,12 @@ public class GeneratedProgram {
     private static final Scanner input = new Scanner(System.in);
     private static final Random random = new Random();
 
-    private static double sc1;
-    private static String nm_text = "";
-    private static String gd_text = "";
+    private static double aa1;
+    private static double bb1;
 
     public static void main(String[] args) {
-        System.out.print("Enter student name:");
-        nm_text = readText();
-        System.out.print("Enter score:");
-        sc1 = readNumber();
-        if (sc1 >= 90) {
-            gd_text = "A";
-        } else {
-            if (sc1 >= 80) {
-                gd_text = "B";
-            } else {
-                if (sc1 >= 70) {
-                    gd_text = "C";
-                } else {
-                    if (sc1 >= 60) {
-                        gd_text = "D";
-                    } else {
-                        gd_text = "F";
-                    }
-                }
-            }
-        }
-        System.out.println(nm_text + " scored " + sc1 + " and received grade " + gd_text);
-        if (sc1 >= 60) {
-            System.out.println("Status: Pass");
-        } else {
-            System.out.println("Status: Fail");
-        }
+        aa1 = (bb1 + 5);
+        System.out.println("Sum " + aa1);
     }
 
     private static double readNumber() {
