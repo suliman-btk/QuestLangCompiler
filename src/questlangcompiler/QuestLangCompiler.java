@@ -23,11 +23,22 @@ public class QuestLangCompiler {
             QuestLangScanner scanner = new QuestLangScanner(source);
             List<Token> tokens = scanner.scanTokens();
 
-            System.out.println("QuestLang Scanner Output");
-            System.out.println("------------------------");
+            // All output files for this program are collected in one folder:
+            //   output/<program-name>/{tokens.txt, parse_tree.txt, GeneratedProgram.java}
+            Path outputDir = resolveOutputDir(sourcePath);
+            Files.createDirectories(outputDir);
+
+            StringBuilder tokenText = new StringBuilder();
+            tokenText.append("QuestLang Scanner Output").append(System.lineSeparator());
+            tokenText.append("------------------------").append(System.lineSeparator());
             for (Token token : tokens) {
-                System.out.println(token);
+                tokenText.append(token).append(System.lineSeparator());
             }
+            Path tokensFile = outputDir.resolve("tokens.txt");
+            Files.writeString(tokensFile, tokenText.toString(), StandardCharsets.UTF_8);
+
+            System.out.println("Output folder:              " + outputDir.toAbsolutePath());
+            System.out.println("Scanner tokens written to:  " + tokensFile.toAbsolutePath());
 
             QuestLangParser parser = new QuestLangParser(tokens);
             QuestLangTraceReporter.printSyntaxTrace(tokens);
@@ -37,6 +48,12 @@ public class QuestLangCompiler {
             System.out.println("Syntax Analysis");
             System.out.println("---------------");
             System.out.println("Syntax analysis successful.");
+
+            try {
+                QuestLangParseTree.printParseTree(tokens, outputDir.resolve("parse_tree.txt"));
+            } catch (RuntimeException treeEx) {
+                System.out.println("(Parse tree display skipped: " + treeEx.getMessage() + ")");
+            }
 
             QuestLangSemanticAnalyzer semanticAnalyzer = new QuestLangSemanticAnalyzer(tokens);
             QuestLangTraceReporter.printSemanticTrace(tokens);
@@ -54,10 +71,15 @@ public class QuestLangCompiler {
             Files.createDirectories(outputPath.getParent());
             Files.writeString(outputPath, javaCode, StandardCharsets.UTF_8);
 
+            // Also keep a copy of the generated program inside the program's output folder.
+            Path generatedCopy = outputDir.resolve("GeneratedProgram.java");
+            Files.writeString(generatedCopy, javaCode, StandardCharsets.UTF_8);
+
             System.out.println();
             System.out.println("Code Generation");
             System.out.println("---------------");
-            System.out.println("Generated Java file: " + outputPath.toAbsolutePath());
+            System.out.println("Generated Java file:        " + outputPath.toAbsolutePath());
+            System.out.println("Generated copy written to:  " + generatedCopy.toAbsolutePath());
             QuestLangTraceReporter.printCompilerSummary(tokens, sourcePath, outputPath, javaCode);
         } catch (ScannerException ex) {
             System.err.println(ex.getMessage());
@@ -95,6 +117,27 @@ public class QuestLangCompiler {
                 "ENDDECIDE",
                 "SAY \"The sum is \" & sm1",
                 "THEEND");
+    }
+
+    private static Path resolveOutputDir(Path sourcePath) {
+        String base = "program";
+        if (sourcePath != null) {
+            String name = sourcePath.getFileName().toString();
+            int dot = name.lastIndexOf('.');
+            base = (dot > 0) ? name.substring(0, dot) : name;
+        }
+
+        Path root;
+        Path parent = (sourcePath != null) ? sourcePath.toAbsolutePath().getParent() : null;
+        if (parent != null && "samples".equalsIgnoreCase(parent.getFileName().toString())
+                && parent.getParent() != null) {
+            root = parent.getParent().resolve("output");
+        } else if (parent != null) {
+            root = parent.resolve("output");
+        } else {
+            root = Path.of("output").toAbsolutePath();
+        }
+        return root.resolve(base);
     }
 
     private static Path resolveGeneratedPath(Path sourcePath) {

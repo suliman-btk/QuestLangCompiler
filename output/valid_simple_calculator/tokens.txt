@@ -1,0 +1,90 @@
+QuestLang Scanner Output
+------------------------
+HERO           HERO                 at 1:1
+NAME           CalculatorHero       at 1:6
+BADGE          BADGE                at 2:1
+NUMBER         1211305566           at 2:7
+STAT           STAT                 at 4:1
+NUM_ID         aa1                  at 4:6
+COMMA          ,                    at 4:9
+NUM_ID         bb1                  at 4:11
+COMMA          ,                    at 4:14
+NUM_ID         op1                  at 4:16
+COMMA          ,                    at 4:19
+NUM_ID         rs1                  at 4:21
+ASK            ASK                  at 6:1
+TEXT_LITERAL   Enter first number:  at 6:5
+COMMA          ,                    at 6:26
+NUM_ID         aa1                  at 6:28
+ASK            ASK                  at 7:1
+TEXT_LITERAL   Enter second number: at 7:5
+COMMA          ,                    at 7:27
+NUM_ID         bb1                  at 7:29
+ASK            ASK                  at 8:1
+TEXT_LITERAL   Choose operation 1 add 2 subtract 3 multiply 4 divide: at 8:5
+COMMA          ,                    at 8:61
+NUM_ID         op1                  at 8:63
+CHOOSE         CHOOSE               at 10:1
+NUM_ID         op1                  at 10:8
+OPTION         OPTION               at 11:5
+NUMBER         1                    at 11:12
+COLON          :                    at 11:14
+NUM_ID         rs1                  at 12:9
+ASSIGN         =                    at 12:13
+NUM_ID         aa1                  at 12:15
+PLUS           +                    at 12:19
+NUM_ID         bb1                  at 12:21
+SAY            SAY                  at 13:9
+TEXT_LITERAL   Addition result is   at 13:13
+AMPERSAND      &                    at 13:35
+NUM_ID         rs1                  at 13:37
+OPTION         OPTION               at 14:5
+NUMBER         2                    at 14:12
+COLON          :                    at 14:14
+NUM_ID         rs1                  at 15:9
+ASSIGN         =                    at 15:13
+NUM_ID         aa1                  at 15:15
+MINUS          -                    at 15:19
+NUM_ID         bb1                  at 15:21
+SAY            SAY                  at 16:9
+TEXT_LITERAL   Subtraction result is  at 16:13
+AMPERSAND      &                    at 16:38
+NUM_ID         rs1                  at 16:40
+OPTION         OPTION               at 17:5
+NUMBER         3                    at 17:12
+COLON          :                    at 17:14
+NUM_ID         rs1                  at 18:9
+ASSIGN         =                    at 18:13
+NUM_ID         aa1                  at 18:15
+MULTIPLY       *                    at 18:19
+NUM_ID         bb1                  at 18:21
+SAY            SAY                  at 19:9
+TEXT_LITERAL   Multiplication result is  at 19:13
+AMPERSAND      &                    at 19:41
+NUM_ID         rs1                  at 19:43
+OPTION         OPTION               at 20:5
+NUMBER         4                    at 20:12
+COLON          :                    at 20:14
+DECIDE         DECIDE               at 21:9
+NUM_ID         bb1                  at 21:16
+NEQ            <>                   at 21:20
+NUMBER         0                    at 21:23
+NUM_ID         rs1                  at 22:13
+ASSIGN         =                    at 22:17
+NUM_ID         aa1                  at 22:19
+DIVIDE         /                    at 22:23
+NUM_ID         bb1                  at 22:25
+SAY            SAY                  at 23:13
+TEXT_LITERAL   Division result is   at 23:17
+AMPERSAND      &                    at 23:39
+NUM_ID         rs1                  at 23:41
+OTHERWISE      OTHERWISE            at 24:9
+SAY            SAY                  at 25:13
+TEXT_LITERAL   Cannot divide by zero. at 25:17
+ENDDECIDE      ENDDECIDE            at 26:9
+OTHERWISE      OTHERWISE            at 27:5
+SAY            SAY                  at 28:9
+TEXT_LITERAL   Unknown calculator operation. at 28:13
+ENDCHOOSE      ENDCHOOSE            at 29:1
+THEEND         THEEND               at 31:1
+EOF            at 32:1

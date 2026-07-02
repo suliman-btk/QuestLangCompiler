@@ -1,0 +1,630 @@
+QuestLang Parse Tree
+<program>
+|-- <id-section>
+|   |-- HERO "HERO"
+|   |-- NAME "AdvisorHero"
+|   |-- BADGE "BADGE"
+|   \-- NUMBER "1211305566"
+|-- <decl-section>
+|   |-- <decl>
+|   |   |-- STAT
+|   |   |-- NUM_ID "ct1"
+|   |   |-- ","
+|   |   |-- NUM_ID "sc1"
+|   |   |-- ","
+|   |   |-- NUM_ID "tt1"
+|   |   |-- ","
+|   |   |-- NUM_ID "av1"
+|   |   |-- ","
+|   |   |-- NUM_ID "mx1"
+|   |   |-- ","
+|   |   |-- NUM_ID "mn1"
+|   |   |-- ","
+|   |   |-- NUM_ID "df1"
+|   |   |-- ","
+|   |   |-- NUM_ID "rp1"
+|   |   |-- ","
+|   |   \-- NUM_ID "id1"
+|   \-- <decl>
+|       |-- TALE
+|       |-- TEXT_ID "nm$"
+|       |-- ","
+|       \-- TEXT_ID "gd$"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "banner"
+|   |-- <stmt-list>
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "===== QUEST ACADEMIC ADVISOR ====="
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- BOX
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "4"
+|   \-- ENDTRICK "ENDTRICK"
+|-- <stmt-list>
+|   |-- <stmt>
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "banner"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Enter student name: "
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- TEXT_ID "nm$"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "How many course scores: "
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "ct1"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "ct1"
+|   |       |                   |-- LTE "<="
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "0"
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <say>
+|   |       |   |       |-- SAY "SAY"
+|   |       |   |       \-- <text-expr>
+|   |       |   |           \-- <text-item>
+|   |       |   |               \-- TEXT_LITERAL "Invalid course count. Using one course."
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "ct1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               \-- <term>
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUMBER "1"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Course count accepted."
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "tt1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "mx1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "mn1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "100"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "id1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- <builtin-call>
+|   |                       |-- LUCK "LUCK"
+|   |                       |-- LPAREN "("
+|   |                       |-- <expr>
+|   |                       |   \-- <term>
+|   |                       |       \-- <factor>
+|   |                       |           \-- NUMBER "1000"
+|   |                       |-- COMMA ","
+|   |                       |-- <expr>
+|   |                       |   \-- <term>
+|   |                       |       \-- <factor>
+|   |                       |           \-- NUMBER "9999"
+|   |                       \-- RPAREN ")"
+|   |-- <stmt>
+|   |   \-- <loop>
+|   |       |-- GRIND
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "ct1"
+|   |       |-- TIMES "TIMES"
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter course score: "
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "sc1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <decision>
+|   |       |   |       |-- DECIDE "DECIDE"
+|   |       |   |       |-- <condition>
+|   |       |   |       |   \-- <or-condition>
+|   |       |   |       |       \-- <and-condition>
+|   |       |   |       |           \-- <not-condition>
+|   |       |   |       |               \-- <relation>
+|   |       |   |       |                   |-- <expr>
+|   |       |   |       |                   |   \-- <term>
+|   |       |   |       |                   |       \-- <factor>
+|   |       |   |       |                   |           \-- NUM_ID "sc1"
+|   |       |   |       |                   |-- LT "<"
+|   |       |   |       |                   \-- <expr>
+|   |       |   |       |                       \-- <term>
+|   |       |   |       |                           \-- <factor>
+|   |       |   |       |                               \-- NUMBER "0"
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   |-- <stmt>
+|   |       |   |       |   |   \-- <say>
+|   |       |   |       |   |       |-- SAY "SAY"
+|   |       |   |       |   |       \-- <text-expr>
+|   |       |   |       |   |           \-- <text-item>
+|   |       |   |       |   |               \-- TEXT_LITERAL "Score below zero adjusted to zero."
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <assignment>
+|   |       |   |       |           |-- NUM_ID "sc1"
+|   |       |   |       |           |-- ASSIGN "="
+|   |       |   |       |           \-- <expr>
+|   |       |   |       |               \-- <term>
+|   |       |   |       |                   \-- <factor>
+|   |       |   |       |                       \-- NUMBER "0"
+|   |       |   |       |-- OTHERWISE
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <decision>
+|   |       |   |       |           |-- DECIDE "DECIDE"
+|   |       |   |       |           |-- <condition>
+|   |       |   |       |           |   \-- <or-condition>
+|   |       |   |       |           |       \-- <and-condition>
+|   |       |   |       |           |           \-- <not-condition>
+|   |       |   |       |           |               \-- <relation>
+|   |       |   |       |           |                   |-- <expr>
+|   |       |   |       |           |                   |   \-- <term>
+|   |       |   |       |           |                   |       \-- <factor>
+|   |       |   |       |           |                   |           \-- NUM_ID "sc1"
+|   |       |   |       |           |                   |-- GT ">"
+|   |       |   |       |           |                   \-- <expr>
+|   |       |   |       |           |                       \-- <term>
+|   |       |   |       |           |                           \-- <factor>
+|   |       |   |       |           |                               \-- NUMBER "100"
+|   |       |   |       |           |-- <stmt-list>
+|   |       |   |       |           |   |-- <stmt>
+|   |       |   |       |           |   |   \-- <say>
+|   |       |   |       |           |   |       |-- SAY "SAY"
+|   |       |   |       |           |   |       \-- <text-expr>
+|   |       |   |       |           |   |           \-- <text-item>
+|   |       |   |       |           |   |               \-- TEXT_LITERAL "Score above 100 adjusted to 100."
+|   |       |   |       |           |   \-- <stmt>
+|   |       |   |       |           |       \-- <assignment>
+|   |       |   |       |           |           |-- NUM_ID "sc1"
+|   |       |   |       |           |           |-- ASSIGN "="
+|   |       |   |       |           |           \-- <expr>
+|   |       |   |       |           |               \-- <term>
+|   |       |   |       |           |                   \-- <factor>
+|   |       |   |       |           |                       \-- NUMBER "100"
+|   |       |   |       |           |-- OTHERWISE
+|   |       |   |       |           |-- <stmt-list>
+|   |       |   |       |           |   \-- <stmt>
+|   |       |   |       |           |       \-- <say>
+|   |       |   |       |           |           |-- SAY "SAY"
+|   |       |   |       |           |           \-- <text-expr>
+|   |       |   |       |           |               \-- <text-item>
+|   |       |   |       |           |                   \-- TEXT_LITERAL "Score accepted."
+|   |       |   |       |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |       \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "tt1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "tt1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "sc1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "mx1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- <builtin-call>
+|   |       |   |                       |-- BIGGER "BIGGER"
+|   |       |   |                       |-- LPAREN "("
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "mx1"
+|   |       |   |                       |-- COMMA ","
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "sc1"
+|   |       |   |                       \-- RPAREN ")"
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "mn1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               \-- <term>
+|   |       |                   \-- <factor>
+|   |       |                       \-- <builtin-call>
+|   |       |                           |-- SMALLER "SMALLER"
+|   |       |                           |-- LPAREN "("
+|   |       |                           |-- <expr>
+|   |       |                           |   \-- <term>
+|   |       |                           |       \-- <factor>
+|   |       |                           |           \-- NUM_ID "mn1"
+|   |       |                           |-- COMMA ","
+|   |       |                           |-- <expr>
+|   |       |                           |   \-- <term>
+|   |       |                           |       \-- <factor>
+|   |       |                           |           \-- NUM_ID "sc1"
+|   |       |                           \-- RPAREN ")"
+|   |       \-- ENDGRIND "ENDGRIND"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "av1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               |-- <factor>
+|   |               |   \-- NUM_ID "tt1"
+|   |               |-- DIVIDE "/"
+|   |               \-- <factor>
+|   |                   \-- NUM_ID "ct1"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "df1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- <builtin-call>
+|   |                       |-- ABS "ABS"
+|   |                       |-- LPAREN "("
+|   |                       |-- <expr>
+|   |                       |   |-- <term>
+|   |                       |   |   \-- <factor>
+|   |                       |   |       \-- NUM_ID "mx1"
+|   |                       |   |-- MINUS "-"
+|   |                       |   \-- <term>
+|   |                       |       \-- <factor>
+|   |                       |           \-- NUM_ID "mn1"
+|   |                       \-- RPAREN ")"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "av1"
+|   |       |                   |-- GTE ">="
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "85"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- TEXT_ID "gd$"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <text-assign-expr>
+|   |       |               \-- <text-assign-item>
+|   |       |                   \-- TEXT_LITERAL "Excellent"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <decision>
+|   |       |           |-- DECIDE "DECIDE"
+|   |       |           |-- <condition>
+|   |       |           |   \-- <or-condition>
+|   |       |           |       \-- <and-condition>
+|   |       |           |           \-- <not-condition>
+|   |       |           |               \-- <relation>
+|   |       |           |                   |-- <expr>
+|   |       |           |                   |   \-- <term>
+|   |       |           |                   |       \-- <factor>
+|   |       |           |                   |           \-- NUM_ID "av1"
+|   |       |           |                   |-- GTE ">="
+|   |       |           |                   \-- <expr>
+|   |       |           |                       \-- <term>
+|   |       |           |                           \-- <factor>
+|   |       |           |                               \-- NUMBER "70"
+|   |       |           |-- <stmt-list>
+|   |       |           |   \-- <stmt>
+|   |       |           |       \-- <assignment>
+|   |       |           |           |-- TEXT_ID "gd$"
+|   |       |           |           |-- ASSIGN "="
+|   |       |           |           \-- <text-assign-expr>
+|   |       |           |               \-- <text-assign-item>
+|   |       |           |                   \-- TEXT_LITERAL "Good"
+|   |       |           |-- OTHERWISE
+|   |       |           |-- <stmt-list>
+|   |       |           |   \-- <stmt>
+|   |       |           |       \-- <decision>
+|   |       |           |           |-- DECIDE "DECIDE"
+|   |       |           |           |-- <condition>
+|   |       |           |           |   \-- <or-condition>
+|   |       |           |           |       \-- <and-condition>
+|   |       |           |           |           \-- <not-condition>
+|   |       |           |           |               \-- <relation>
+|   |       |           |           |                   |-- <expr>
+|   |       |           |           |                   |   \-- <term>
+|   |       |           |           |                   |       \-- <factor>
+|   |       |           |           |                   |           \-- NUM_ID "av1"
+|   |       |           |           |                   |-- GTE ">="
+|   |       |           |           |                   \-- <expr>
+|   |       |           |           |                       \-- <term>
+|   |       |           |           |                           \-- <factor>
+|   |       |           |           |                               \-- NUMBER "50"
+|   |       |           |           |-- <stmt-list>
+|   |       |           |           |   \-- <stmt>
+|   |       |           |           |       \-- <assignment>
+|   |       |           |           |           |-- TEXT_ID "gd$"
+|   |       |           |           |           |-- ASSIGN "="
+|   |       |           |           |           \-- <text-assign-expr>
+|   |       |           |           |               \-- <text-assign-item>
+|   |       |           |           |                   \-- TEXT_LITERAL "Pass"
+|   |       |           |           |-- OTHERWISE
+|   |       |           |           |-- <stmt-list>
+|   |       |           |           |   \-- <stmt>
+|   |       |           |           |       \-- <assignment>
+|   |       |           |           |           |-- TEXT_ID "gd$"
+|   |       |           |           |           |-- ASSIGN "="
+|   |       |           |           |           \-- <text-assign-expr>
+|   |       |           |           |               \-- <text-assign-item>
+|   |       |           |           |                   \-- TEXT_LITERAL "At Risk"
+|   |       |           |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |           \-- ENDDECIDE "ENDDECIDE"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Choose report 1 Summary, 2 Advice, 3 Full: "
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "rp1"
+|   |-- <stmt>
+|   |   \-- <choose>
+|   |       |-- CHOOSE "CHOOSE"
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "rp1"
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "1"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       \-- <stmt>
+|   |       |           \-- <say>
+|   |       |               |-- SAY "SAY"
+|   |       |               \-- <text-expr>
+|   |       |                   \-- <text-item>
+|   |       |                       \-- TEXT_LITERAL "Summary report selected."
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "2"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       |-- <stmt>
+|   |       |       |   \-- <say>
+|   |       |       |       |-- SAY "SAY"
+|   |       |       |       \-- <text-expr>
+|   |       |       |           \-- <text-item>
+|   |       |       |               \-- TEXT_LITERAL "Advice report selected."
+|   |       |       \-- <stmt>
+|   |       |           \-- <decision>
+|   |       |               |-- DECIDE "DECIDE"
+|   |       |               |-- <condition>
+|   |       |               |   \-- <or-condition>
+|   |       |               |       \-- <and-condition>
+|   |       |               |           \-- <not-condition>
+|   |       |               |               \-- <relation>
+|   |       |               |                   |-- <expr>
+|   |       |               |                   |   \-- <term>
+|   |       |               |                   |       \-- <factor>
+|   |       |               |                   |           \-- NUM_ID "av1"
+|   |       |               |                   |-- GTE ">="
+|   |       |               |                   \-- <expr>
+|   |       |               |                       \-- <term>
+|   |       |               |                           \-- <factor>
+|   |       |               |                               \-- NUMBER "70"
+|   |       |               |-- <stmt-list>
+|   |       |               |   \-- <stmt>
+|   |       |               |       \-- <say>
+|   |       |               |           |-- SAY "SAY"
+|   |       |               |           \-- <text-expr>
+|   |       |               |               \-- <text-item>
+|   |       |               |                   \-- TEXT_LITERAL "Advice: keep your current study plan."
+|   |       |               |-- OTHERWISE
+|   |       |               |-- <stmt-list>
+|   |       |               |   \-- <stmt>
+|   |       |               |       \-- <say>
+|   |       |               |           |-- SAY "SAY"
+|   |       |               |           \-- <text-expr>
+|   |       |               |               \-- <text-item>
+|   |       |               |                   \-- TEXT_LITERAL "Advice: increase weekly revision time."
+|   |       |               \-- ENDDECIDE "ENDDECIDE"
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "3"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       |-- <stmt>
+|   |       |       |   \-- <say>
+|   |       |       |       |-- SAY "SAY"
+|   |       |       |       \-- <text-expr>
+|   |       |       |           \-- <text-item>
+|   |       |       |               \-- TEXT_LITERAL "Full report selected."
+|   |       |       |-- <stmt>
+|   |       |       |   \-- <say>
+|   |       |       |       |-- SAY "SAY"
+|   |       |       |       \-- <text-expr>
+|   |       |       |           |-- <text-item>
+|   |       |       |           |   \-- TEXT_LITERAL "Highest score: "
+|   |       |       |           |-- AMPERSAND "&"
+|   |       |       |           \-- <text-item>
+|   |       |       |               \-- <expr>
+|   |       |       |                   \-- <term>
+|   |       |       |                       \-- <factor>
+|   |       |       |                           \-- NUM_ID "mx1"
+|   |       |       |-- <stmt>
+|   |       |       |   \-- <say>
+|   |       |       |       |-- SAY "SAY"
+|   |       |       |       \-- <text-expr>
+|   |       |       |           |-- <text-item>
+|   |       |       |           |   \-- TEXT_LITERAL "Lowest score: "
+|   |       |       |           |-- AMPERSAND "&"
+|   |       |       |           \-- <text-item>
+|   |       |       |               \-- <expr>
+|   |       |       |                   \-- <term>
+|   |       |       |                       \-- <factor>
+|   |       |       |                           \-- NUM_ID "mn1"
+|   |       |       \-- <stmt>
+|   |       |           \-- <say>
+|   |       |               |-- SAY "SAY"
+|   |       |               \-- <text-expr>
+|   |       |                   |-- <text-item>
+|   |       |                   |   \-- TEXT_LITERAL "Score range: "
+|   |       |                   |-- AMPERSAND "&"
+|   |       |                   \-- <text-item>
+|   |       |                       \-- <expr>
+|   |       |                           \-- <term>
+|   |       |                               \-- <factor>
+|   |       |                                   \-- NUM_ID "df1"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Unknown report type. Showing summary."
+|   |       \-- ENDCHOOSE "ENDCHOOSE"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Report ID: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "id1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Student: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- TEXT_ID "nm$"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Average score: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "av1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Performance level: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- TEXT_ID "gd$"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "av1"
+|   |       |                   |-- GTE ">="
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "50"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Academic standing: Passed"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Academic standing: Needs support"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   \-- <stmt>
+|       \-- <say>
+|           |-- SAY "SAY"
+|           \-- <text-expr>
+|               \-- <text-item>
+|                   \-- TEXT_LITERAL "===== END OF REPORT ====="
+\-- THEEND "THEEND"

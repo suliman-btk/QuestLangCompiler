@@ -1,0 +1,106 @@
+QuestLang Parse Tree
+<program>
+|-- <id-section>
+|   |-- HERO "HERO"
+|   |-- NAME "TableHero"
+|   |-- BADGE "BADGE"
+|   \-- NUMBER "1211305566"
+|-- <decl-section>
+|   \-- <decl>
+|       |-- STAT
+|       |-- NUM_ID "nn1"
+|       |-- ","
+|       |-- NUM_ID "lm1"
+|       |-- ","
+|       |-- NUM_ID "ii1"
+|       |-- ","
+|       \-- NUM_ID "rs1"
+|-- <stmt-list>
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Enter table number:"
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "nn1"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Enter table limit:"
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "lm1"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "ii1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "1"
+|   \-- <stmt>
+|       \-- <loop>
+|           |-- JOURNEY
+|           |-- FROM "FROM"
+|           |-- <expr>
+|           |   \-- <term>
+|           |       \-- <factor>
+|           |           \-- NUMBER "1"
+|           |-- TO "TO"
+|           |-- <expr>
+|           |   \-- <term>
+|           |       \-- <factor>
+|           |           \-- NUM_ID "lm1"
+|           |-- <stmt-list>
+|           |   |-- <stmt>
+|           |   |   \-- <assignment>
+|           |   |       |-- NUM_ID "rs1"
+|           |   |       |-- ASSIGN "="
+|           |   |       \-- <expr>
+|           |   |           \-- <term>
+|           |   |               |-- <factor>
+|           |   |               |   \-- NUM_ID "nn1"
+|           |   |               |-- MULTIPLY "*"
+|           |   |               \-- <factor>
+|           |   |                   \-- NUM_ID "ii1"
+|           |   |-- <stmt>
+|           |   |   \-- <say>
+|           |   |       |-- SAY "SAY"
+|           |   |       \-- <text-expr>
+|           |   |           |-- <text-item>
+|           |   |           |   \-- <expr>
+|           |   |           |       \-- <term>
+|           |   |           |           \-- <factor>
+|           |   |           |               \-- NUM_ID "nn1"
+|           |   |           |-- AMPERSAND "&"
+|           |   |           |-- <text-item>
+|           |   |           |   \-- TEXT_LITERAL " x "
+|           |   |           |-- AMPERSAND "&"
+|           |   |           |-- <text-item>
+|           |   |           |   \-- <expr>
+|           |   |           |       \-- <term>
+|           |   |           |           \-- <factor>
+|           |   |           |               \-- NUM_ID "ii1"
+|           |   |           |-- AMPERSAND "&"
+|           |   |           |-- <text-item>
+|           |   |           |   \-- TEXT_LITERAL " = "
+|           |   |           |-- AMPERSAND "&"
+|           |   |           \-- <text-item>
+|           |   |               \-- <expr>
+|           |   |                   \-- <term>
+|           |   |                       \-- <factor>
+|           |   |                           \-- NUM_ID "rs1"
+|           |   \-- <stmt>
+|           |       \-- <assignment>
+|           |           |-- NUM_ID "ii1"
+|           |           |-- ASSIGN "="
+|           |           \-- <expr>
+|           |               |-- <term>
+|           |               |   \-- <factor>
+|           |               |       \-- NUM_ID "ii1"
+|           |               |-- PLUS "+"
+|           |               \-- <term>
+|           |                   \-- <factor>
+|           |                       \-- NUMBER "1"
+|           \-- ENDJOURNEY "ENDJOURNEY"
+\-- THEEND "THEEND"

@@ -1,0 +1,477 @@
+QuestLang Parse Tree
+<program>
+|-- <id-section>
+|   |-- HERO "HERO"
+|   |-- NAME "ShopMaster"
+|   |-- BADGE "BADGE"
+|   \-- NUMBER "1211305566"
+|-- <decl-section>
+|   |-- <decl>
+|   |   |-- STAT
+|   |   |-- NUM_ID "ct1"
+|   |   |-- ","
+|   |   |-- NUM_ID "pr1"
+|   |   |-- ","
+|   |   |-- NUM_ID "qt1"
+|   |   |-- ","
+|   |   |-- NUM_ID "ln1"
+|   |   |-- ","
+|   |   |-- NUM_ID "sb1"
+|   |   |-- ","
+|   |   |-- NUM_ID "ds1"
+|   |   |-- ","
+|   |   |-- NUM_ID "tx1"
+|   |   |-- ","
+|   |   |-- NUM_ID "fn1"
+|   |   |-- ","
+|   |   |-- NUM_ID "pm1"
+|   |   |-- ","
+|   |   \-- NUM_ID "rc1"
+|   \-- <decl>
+|       |-- TALE
+|       |-- TEXT_ID "nm$"
+|       |-- ","
+|       \-- TEXT_ID "pn$"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "header"
+|   |-- <stmt-list>
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "===== QUEST SHOP RECEIPT ====="
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- STAR
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "25"
+|   \-- ENDTRICK "ENDTRICK"
+|-- <stmt-list>
+|   |-- <stmt>
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "header"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Enter customer name: "
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- TEXT_ID "nm$"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "How many products: "
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "ct1"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "sb1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "rc1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- <builtin-call>
+|   |                       |-- LUCK "LUCK"
+|   |                       |-- LPAREN "("
+|   |                       |-- <expr>
+|   |                       |   \-- <term>
+|   |                       |       \-- <factor>
+|   |                       |           \-- NUMBER "1000"
+|   |                       |-- COMMA ","
+|   |                       |-- <expr>
+|   |                       |   \-- <term>
+|   |                       |       \-- <factor>
+|   |                       |           \-- NUMBER "9999"
+|   |                       \-- RPAREN ")"
+|   |-- <stmt>
+|   |   \-- <loop>
+|   |       |-- GRIND
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "ct1"
+|   |       |-- TIMES "TIMES"
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter product name: "
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- TEXT_ID "pn$"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter item price: "
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "pr1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter quantity: "
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "qt1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "ln1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               |-- <factor>
+|   |       |   |               |   \-- NUM_ID "pr1"
+|   |       |   |               |-- MULTIPLY "*"
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "qt1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "sb1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "sb1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "ln1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <say>
+|   |       |   |       |-- SAY "SAY"
+|   |       |   |       \-- <text-expr>
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL "Product: "
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           \-- <text-item>
+|   |       |   |               \-- TEXT_ID "pn$"
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               |-- <text-item>
+|   |       |               |   \-- TEXT_LITERAL "Line total: "
+|   |       |               |-- AMPERSAND "&"
+|   |       |               \-- <text-item>
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUM_ID "ln1"
+|   |       \-- ENDGRIND "ENDGRIND"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "sb1"
+|   |       |                   |-- GTE ">="
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "300"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "ds1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               \-- <term>
+|   |       |                   |-- <factor>
+|   |       |                   |   \-- NUM_ID "sb1"
+|   |       |                   |-- MULTIPLY "*"
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUMBER "0.15"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <decision>
+|   |       |           |-- DECIDE "DECIDE"
+|   |       |           |-- <condition>
+|   |       |           |   \-- <or-condition>
+|   |       |           |       \-- <and-condition>
+|   |       |           |           \-- <not-condition>
+|   |       |           |               \-- <relation>
+|   |       |           |                   |-- <expr>
+|   |       |           |                   |   \-- <term>
+|   |       |           |                   |       \-- <factor>
+|   |       |           |                   |           \-- NUM_ID "sb1"
+|   |       |           |                   |-- GTE ">="
+|   |       |           |                   \-- <expr>
+|   |       |           |                       \-- <term>
+|   |       |           |                           \-- <factor>
+|   |       |           |                               \-- NUMBER "100"
+|   |       |           |-- <stmt-list>
+|   |       |           |   \-- <stmt>
+|   |       |           |       \-- <assignment>
+|   |       |           |           |-- NUM_ID "ds1"
+|   |       |           |           |-- ASSIGN "="
+|   |       |           |           \-- <expr>
+|   |       |           |               \-- <term>
+|   |       |           |                   |-- <factor>
+|   |       |           |                   |   \-- NUM_ID "sb1"
+|   |       |           |                   |-- MULTIPLY "*"
+|   |       |           |                   \-- <factor>
+|   |       |           |                       \-- NUMBER "0.10"
+|   |       |           |-- OTHERWISE
+|   |       |           |-- <stmt-list>
+|   |       |           |   \-- <stmt>
+|   |       |           |       \-- <assignment>
+|   |       |           |           |-- NUM_ID "ds1"
+|   |       |           |           |-- ASSIGN "="
+|   |       |           |           \-- <expr>
+|   |       |           |               \-- <term>
+|   |       |           |                   \-- <factor>
+|   |       |           |                       \-- NUMBER "0"
+|   |       |           \-- ENDDECIDE "ENDDECIDE"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "tx1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               |-- <factor>
+|   |               |   |-- "("
+|   |               |   |-- <expr>
+|   |               |   |   |-- <term>
+|   |               |   |   |   \-- <factor>
+|   |               |   |   |       \-- NUM_ID "sb1"
+|   |               |   |   |-- MINUS "-"
+|   |               |   |   \-- <term>
+|   |               |   |       \-- <factor>
+|   |               |   |           \-- NUM_ID "ds1"
+|   |               |   \-- RPAREN ")"
+|   |               |-- MULTIPLY "*"
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0.06"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "fn1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           |-- <term>
+|   |           |   \-- <factor>
+|   |           |       \-- NUM_ID "sb1"
+|   |           |-- MINUS "-"
+|   |           |-- <term>
+|   |           |   \-- <factor>
+|   |           |       \-- NUM_ID "ds1"
+|   |           |-- PLUS "+"
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUM_ID "tx1"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Payment method 1 Cash, 2 Card, 3 E-wallet: "
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "pm1"
+|   |-- <stmt>
+|   |   \-- <choose>
+|   |       |-- CHOOSE "CHOOSE"
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "pm1"
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "1"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       \-- <stmt>
+|   |       |           \-- <say>
+|   |       |               |-- SAY "SAY"
+|   |       |               \-- <text-expr>
+|   |       |                   \-- <text-item>
+|   |       |                       \-- TEXT_LITERAL "Payment method: Cash"
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "2"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       \-- <stmt>
+|   |       |           \-- <say>
+|   |       |               |-- SAY "SAY"
+|   |       |               \-- <text-expr>
+|   |       |                   \-- <text-item>
+|   |       |                       \-- TEXT_LITERAL "Payment method: Card"
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "3"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       \-- <stmt>
+|   |       |           \-- <say>
+|   |       |               |-- SAY "SAY"
+|   |       |               \-- <text-expr>
+|   |       |                   \-- <text-item>
+|   |       |                       \-- TEXT_LITERAL "Payment method: E-wallet"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Payment method: Unknown"
+|   |       \-- ENDCHOOSE "ENDCHOOSE"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Receipt number: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "rc1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Customer: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- TEXT_ID "nm$"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Subtotal: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "sb1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Discount: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "ds1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Tax: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "tx1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Final bill: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "fn1"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "fn1"
+|   |       |                   |-- GTE ">="
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "300"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Bill level: High value customer"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <decision>
+|   |       |           |-- DECIDE "DECIDE"
+|   |       |           |-- <condition>
+|   |       |           |   \-- <or-condition>
+|   |       |           |       \-- <and-condition>
+|   |       |           |           \-- <not-condition>
+|   |       |           |               \-- <relation>
+|   |       |           |                   |-- <expr>
+|   |       |           |                   |   \-- <term>
+|   |       |           |                   |       \-- <factor>
+|   |       |           |                   |           \-- NUM_ID "fn1"
+|   |       |           |                   |-- GTE ">="
+|   |       |           |                   \-- <expr>
+|   |       |           |                       \-- <term>
+|   |       |           |                           \-- <factor>
+|   |       |           |                               \-- NUMBER "100"
+|   |       |           |-- <stmt-list>
+|   |       |           |   \-- <stmt>
+|   |       |           |       \-- <say>
+|   |       |           |           |-- SAY "SAY"
+|   |       |           |           \-- <text-expr>
+|   |       |           |               \-- <text-item>
+|   |       |           |                   \-- TEXT_LITERAL "Bill level: Normal customer"
+|   |       |           |-- OTHERWISE
+|   |       |           |-- <stmt-list>
+|   |       |           |   \-- <stmt>
+|   |       |           |       \-- <say>
+|   |       |           |           |-- SAY "SAY"
+|   |       |           |           \-- <text-expr>
+|   |       |           |               \-- <text-item>
+|   |       |           |                   \-- TEXT_LITERAL "Bill level: Small purchase"
+|   |       |           \-- ENDDECIDE "ENDDECIDE"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   \-- <stmt>
+|       \-- <say>
+|           |-- SAY "SAY"
+|           \-- <text-expr>
+|               \-- <text-item>
+|                   \-- TEXT_LITERAL "===== THANK YOU ====="
+\-- THEEND "THEEND"

@@ -1,0 +1,33 @@
+QuestLang Scanner Output
+------------------------
+HERO           HERO                 at 1:1
+NAME           TableWizard          at 1:6
+BADGE          BADGE                at 2:1
+NUMBER         1211305566           at 2:7
+STAT           STAT                 at 5:1
+NUM_ID         nn1                  at 5:6
+COMMA          ,                    at 5:9
+NUM_ID         lm1                  at 5:11
+COMMA          ,                    at 5:14
+NUM_ID         st1                  at 5:16
+COMMA          ,                    at 5:19
+NUM_ID         ii1                  at 5:21
+COMMA          ,                    at 5:24
+NUM_ID         rs1                  at 5:26
+COMMA          ,                    at 5:29
+NUM_ID         sm1                  at 5:31
+COMMA          ,                    at 5:34
+NUM_ID         hv1                  at 5:36
+TALE           TALE                 at 6:1
+TEXT_ID        tg$                  at 6:6
+DEFINE         DEFINE               at 8:1
+TRICK          TRICK                at 8:8
+NAME           header               at 8:14
+SAY            SAY                  at 9:5
+TEXT_LITERAL   ======= MULTIPLICATION QUEST ======= at 9:9
+DRAW           DRAW                 at 10:5
+STAR           STAR                 at 10:10
+NUMBER         28                   at 10:15
+ENDTRICK       ENDTRICK             at 11:1
+NAME           PERF                 at 13:1
+EOF            at 13:5

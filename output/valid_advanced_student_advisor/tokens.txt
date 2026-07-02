@@ -1,0 +1,250 @@
+QuestLang Scanner Output
+------------------------
+HERO           HERO                 at 1:1
+NAME           AdvisorHero          at 1:6
+BADGE          BADGE                at 2:1
+NUMBER         1211305566           at 2:7
+STAT           STAT                 at 4:1
+NUM_ID         ct1                  at 4:6
+COMMA          ,                    at 4:9
+NUM_ID         sc1                  at 4:11
+COMMA          ,                    at 4:14
+NUM_ID         tt1                  at 4:16
+COMMA          ,                    at 4:19
+NUM_ID         av1                  at 4:21
+COMMA          ,                    at 4:24
+NUM_ID         mx1                  at 4:26
+COMMA          ,                    at 4:29
+NUM_ID         mn1                  at 4:31
+COMMA          ,                    at 4:34
+NUM_ID         df1                  at 4:36
+COMMA          ,                    at 4:39
+NUM_ID         rp1                  at 4:41
+COMMA          ,                    at 4:44
+NUM_ID         id1                  at 4:46
+TALE           TALE                 at 5:1
+TEXT_ID        nm$                  at 5:6
+COMMA          ,                    at 5:9
+TEXT_ID        gd$                  at 5:11
+DEFINE         DEFINE               at 7:1
+TRICK          TRICK                at 7:8
+NAME           banner               at 7:14
+SAY            SAY                  at 8:5
+TEXT_LITERAL   ===== QUEST ACADEMIC ADVISOR ===== at 8:9
+DRAW           DRAW                 at 9:5
+BOX            BOX                  at 9:10
+NUMBER         4                    at 9:14
+ENDTRICK       ENDTRICK             at 10:1
+PERFORM        PERFORM              at 12:1
+NAME           banner               at 12:9
+ASK            ASK                  at 14:1
+TEXT_LITERAL   Enter student name:  at 14:5
+COMMA          ,                    at 14:27
+TEXT_ID        nm$                  at 14:29
+ASK            ASK                  at 15:1
+TEXT_LITERAL   How many course scores:  at 15:5
+COMMA          ,                    at 15:31
+NUM_ID         ct1                  at 15:33
+DECIDE         DECIDE               at 17:1
+NUM_ID         ct1                  at 17:8
+LTE            <=                   at 17:12
+NUMBER         0                    at 17:15
+SAY            SAY                  at 18:5
+TEXT_LITERAL   Invalid course count. Using one course. at 18:9
+NUM_ID         ct1                  at 19:5
+ASSIGN         =                    at 19:9
+NUMBER         1                    at 19:11
+OTHERWISE      OTHERWISE            at 20:1
+SAY            SAY                  at 21:5
+TEXT_LITERAL   Course count accepted. at 21:9
+ENDDECIDE      ENDDECIDE            at 22:1
+NUM_ID         tt1                  at 24:1
+ASSIGN         =                    at 24:5
+NUMBER         0                    at 24:7
+NUM_ID         mx1                  at 25:1
+ASSIGN         =                    at 25:5
+NUMBER         0                    at 25:7
+NUM_ID         mn1                  at 26:1
+ASSIGN         =                    at 26:5
+NUMBER         100                  at 26:7
+NUM_ID         id1                  at 27:1
+ASSIGN         =                    at 27:5
+LUCK           LUCK                 at 27:7
+LPAREN         (                    at 27:11
+NUMBER         1000                 at 27:12
+COMMA          ,                    at 27:16
+NUMBER         9999                 at 27:18
+RPAREN         )                    at 27:22
+GRIND          GRIND                at 29:1
+NUM_ID         ct1                  at 29:7
+TIMES          TIMES                at 29:11
+ASK            ASK                  at 30:5
+TEXT_LITERAL   Enter course score:  at 30:9
+COMMA          ,                    at 30:31
+NUM_ID         sc1                  at 30:33
+DECIDE         DECIDE               at 32:5
+NUM_ID         sc1                  at 32:12
+LT             <                    at 32:16
+NUMBER         0                    at 32:18
+SAY            SAY                  at 33:9
+TEXT_LITERAL   Score below zero adjusted to zero. at 33:13
+NUM_ID         sc1                  at 34:9
+ASSIGN         =                    at 34:13
+NUMBER         0                    at 34:15
+OTHERWISE      OTHERWISE            at 35:5
+DECIDE         DECIDE               at 36:9
+NUM_ID         sc1                  at 36:16
+GT             >                    at 36:20
+NUMBER         100                  at 36:22
+SAY            SAY                  at 37:13
+TEXT_LITERAL   Score above 100 adjusted to 100. at 37:17
+NUM_ID         sc1                  at 38:13
+ASSIGN         =                    at 38:17
+NUMBER         100                  at 38:19
+OTHERWISE      OTHERWISE            at 39:9
+SAY            SAY                  at 40:13
+TEXT_LITERAL   Score accepted.      at 40:17
+ENDDECIDE      ENDDECIDE            at 41:9
+ENDDECIDE      ENDDECIDE            at 42:5
+NUM_ID         tt1                  at 44:5
+ASSIGN         =                    at 44:9
+NUM_ID         tt1                  at 44:11
+PLUS           +                    at 44:15
+NUM_ID         sc1                  at 44:17
+NUM_ID         mx1                  at 45:5
+ASSIGN         =                    at 45:9
+BIGGER         BIGGER               at 45:11
+LPAREN         (                    at 45:17
+NUM_ID         mx1                  at 45:18
+COMMA          ,                    at 45:21
+NUM_ID         sc1                  at 45:23
+RPAREN         )                    at 45:26
+NUM_ID         mn1                  at 46:5
+ASSIGN         =                    at 46:9
+SMALLER        SMALLER              at 46:11
+LPAREN         (                    at 46:18
+NUM_ID         mn1                  at 46:19
+COMMA          ,                    at 46:22
+NUM_ID         sc1                  at 46:24
+RPAREN         )                    at 46:27
+ENDGRIND       ENDGRIND             at 47:1
+NUM_ID         av1                  at 49:1
+ASSIGN         =                    at 49:5
+NUM_ID         tt1                  at 49:7
+DIVIDE         /                    at 49:11
+NUM_ID         ct1                  at 49:13
+NUM_ID         df1                  at 50:1
+ASSIGN         =                    at 50:5
+ABS            ABS                  at 50:7
+LPAREN         (                    at 50:10
+NUM_ID         mx1                  at 50:11
+MINUS          -                    at 50:15
+NUM_ID         mn1                  at 50:17
+RPAREN         )                    at 50:20
+DECIDE         DECIDE               at 52:1
+NUM_ID         av1                  at 52:8
+GTE            >=                   at 52:12
+NUMBER         85                   at 52:15
+TEXT_ID        gd$                  at 53:5
+ASSIGN         =                    at 53:9
+TEXT_LITERAL   Excellent            at 53:11
+OTHERWISE      OTHERWISE            at 54:1
+DECIDE         DECIDE               at 55:5
+NUM_ID         av1                  at 55:12
+GTE            >=                   at 55:16
+NUMBER         70                   at 55:19
+TEXT_ID        gd$                  at 56:9
+ASSIGN         =                    at 56:13
+TEXT_LITERAL   Good                 at 56:15
+OTHERWISE      OTHERWISE            at 57:5
+DECIDE         DECIDE               at 58:9
+NUM_ID         av1                  at 58:16
+GTE            >=                   at 58:20
+NUMBER         50                   at 58:23
+TEXT_ID        gd$                  at 59:13
+ASSIGN         =                    at 59:17
+TEXT_LITERAL   Pass                 at 59:19
+OTHERWISE      OTHERWISE            at 60:9
+TEXT_ID        gd$                  at 61:13
+ASSIGN         =                    at 61:17
+TEXT_LITERAL   At Risk              at 61:19
+ENDDECIDE      ENDDECIDE            at 62:9
+ENDDECIDE      ENDDECIDE            at 63:5
+ENDDECIDE      ENDDECIDE            at 64:1
+ASK            ASK                  at 66:1
+TEXT_LITERAL   Choose report 1 Summary, 2 Advice, 3 Full:  at 66:5
+COMMA          ,                    at 66:50
+NUM_ID         rp1                  at 66:52
+CHOOSE         CHOOSE               at 68:1
+NUM_ID         rp1                  at 68:8
+OPTION         OPTION               at 69:5
+NUMBER         1                    at 69:12
+COLON          :                    at 69:13
+SAY            SAY                  at 70:9
+TEXT_LITERAL   Summary report selected. at 70:13
+OPTION         OPTION               at 71:5
+NUMBER         2                    at 71:12
+COLON          :                    at 71:13
+SAY            SAY                  at 72:9
+TEXT_LITERAL   Advice report selected. at 72:13
+DECIDE         DECIDE               at 73:9
+NUM_ID         av1                  at 73:16
+GTE            >=                   at 73:20
+NUMBER         70                   at 73:23
+SAY            SAY                  at 74:13
+TEXT_LITERAL   Advice: keep your current study plan. at 74:17
+OTHERWISE      OTHERWISE            at 75:9
+SAY            SAY                  at 76:13
+TEXT_LITERAL   Advice: increase weekly revision time. at 76:17
+ENDDECIDE      ENDDECIDE            at 77:9
+OPTION         OPTION               at 78:5
+NUMBER         3                    at 78:12
+COLON          :                    at 78:13
+SAY            SAY                  at 79:9
+TEXT_LITERAL   Full report selected. at 79:13
+SAY            SAY                  at 80:9
+TEXT_LITERAL   Highest score:       at 80:13
+AMPERSAND      &                    at 80:31
+NUM_ID         mx1                  at 80:33
+SAY            SAY                  at 81:9
+TEXT_LITERAL   Lowest score:        at 81:13
+AMPERSAND      &                    at 81:30
+NUM_ID         mn1                  at 81:32
+SAY            SAY                  at 82:9
+TEXT_LITERAL   Score range:         at 82:13
+AMPERSAND      &                    at 82:29
+NUM_ID         df1                  at 82:31
+OTHERWISE      OTHERWISE            at 83:5
+SAY            SAY                  at 84:9
+TEXT_LITERAL   Unknown report type. Showing summary. at 84:13
+ENDCHOOSE      ENDCHOOSE            at 85:1
+SAY            SAY                  at 87:1
+TEXT_LITERAL   Report ID:           at 87:5
+AMPERSAND      &                    at 87:19
+NUM_ID         id1                  at 87:21
+SAY            SAY                  at 88:1
+TEXT_LITERAL   Student:             at 88:5
+AMPERSAND      &                    at 88:17
+TEXT_ID        nm$                  at 88:19
+SAY            SAY                  at 89:1
+TEXT_LITERAL   Average score:       at 89:5
+AMPERSAND      &                    at 89:23
+NUM_ID         av1                  at 89:25
+SAY            SAY                  at 90:1
+TEXT_LITERAL   Performance level:   at 90:5
+AMPERSAND      &                    at 90:27
+TEXT_ID        gd$                  at 90:29
+DECIDE         DECIDE               at 92:1
+NUM_ID         av1                  at 92:8
+GTE            >=                   at 92:12
+NUMBER         50                   at 92:15
+SAY            SAY                  at 93:5
+TEXT_LITERAL   Academic standing: Passed at 93:9
+OTHERWISE      OTHERWISE            at 94:1
+SAY            SAY                  at 95:5
+TEXT_LITERAL   Academic standing: Needs support at 95:9
+ENDDECIDE      ENDDECIDE            at 96:1
+SAY            SAY                  at 98:1
+TEXT_LITERAL   ===== END OF REPORT ===== at 98:5
+THEEND         THEEND               at 100:1
+EOF            at 101:1
