@@ -1,0 +1,562 @@
+QuestLang Parse Tree
+<program>
+|-- <id-section>
+|   |-- HERO "HERO"
+|   |-- NAME "ShopKeeper"
+|   |-- BADGE "BADGE"
+|   \-- NUMBER "1211305566"
+|-- <decl-section>
+|   |-- <decl>
+|   |   |-- STAT
+|   |   |-- NUM_ID "ni1"
+|   |   |-- ","
+|   |   |-- NUM_ID "pr1"
+|   |   |-- ","
+|   |   |-- NUM_ID "qt1"
+|   |   |-- ","
+|   |   |-- NUM_ID "ln1"
+|   |   |-- ","
+|   |   |-- NUM_ID "sb1"
+|   |   |-- ","
+|   |   |-- NUM_ID "ds1"
+|   |   |-- ","
+|   |   |-- NUM_ID "tx1"
+|   |   |-- ","
+|   |   |-- NUM_ID "fn1"
+|   |   |-- ","
+|   |   |-- NUM_ID "mx1"
+|   |   |-- ","
+|   |   |-- NUM_ID "mn1"
+|   |   |-- ","
+|   |   |-- NUM_ID "mt1"
+|   |   |-- ","
+|   |   |-- NUM_ID "cp1"
+|   |   |-- ","
+|   |   \-- NUM_ID "ch1"
+|   \-- <decl>
+|       |-- TALE
+|       |-- TEXT_ID "it$"
+|       |-- ","
+|       \-- TEXT_ID "mb$"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "receipt"
+|   |-- <stmt-list>
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "========== QUEST MART RECEIPT =========="
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- STAR
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "34"
+|   \-- ENDTRICK "ENDTRICK"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "sep"
+|   |-- <stmt-list>
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- STAR
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "20"
+|   \-- ENDTRICK "ENDTRICK"
+|-- <stmt-list>
+|   |-- <stmt>
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "receipt"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Membership? 1 Silver 2 Gold 3 None:"
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "mt1"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "How many items:"
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "ni1"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "sb1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "mx1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "mn1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "999999"
+|   |-- <stmt>
+|   |   \-- <loop>
+|   |       |-- GRIND
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "ni1"
+|   |       |-- TIMES "TIMES"
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter item name:"
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- TEXT_ID "it$"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter unit price:"
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "pr1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter quantity:"
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "qt1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "ln1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               |-- <factor>
+|   |       |   |               |   \-- NUM_ID "pr1"
+|   |       |   |               |-- MULTIPLY "*"
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "qt1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "sb1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "sb1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "ln1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "mx1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- <builtin-call>
+|   |       |   |                       |-- BIGGER "BIGGER"
+|   |       |   |                       |-- LPAREN "("
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "mx1"
+|   |       |   |                       |-- COMMA ","
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "ln1"
+|   |       |   |                       \-- RPAREN ")"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "mn1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- <builtin-call>
+|   |       |   |                       |-- SMALLER "SMALLER"
+|   |       |   |                       |-- LPAREN "("
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "mn1"
+|   |       |   |                       |-- COMMA ","
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "ln1"
+|   |       |   |                       \-- RPAREN ")"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <say>
+|   |       |   |       |-- SAY "SAY"
+|   |       |   |       \-- <text-expr>
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL "Item: "
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_ID "it$"
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL "  line total: "
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           \-- <text-item>
+|   |       |   |               \-- <expr>
+|   |       |   |                   \-- <term>
+|   |       |   |                       \-- <factor>
+|   |       |   |                           \-- NUM_ID "ln1"
+|   |       |   \-- <stmt>
+|   |       |       \-- <perform>
+|   |       |           |-- PERFORM "PERFORM"
+|   |       |           \-- NAME "sep"
+|   |       \-- ENDGRIND "ENDGRIND"
+|   |-- <stmt>
+|   |   \-- <choose>
+|   |       |-- CHOOSE "CHOOSE"
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "mt1"
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "1"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       |-- <stmt>
+|   |       |       |   \-- <assignment>
+|   |       |       |       |-- NUM_ID "ds1"
+|   |       |       |       |-- ASSIGN "="
+|   |       |       |       \-- <expr>
+|   |       |       |           \-- <term>
+|   |       |       |               |-- <factor>
+|   |       |       |               |   \-- NUM_ID "sb1"
+|   |       |       |               |-- MULTIPLY "*"
+|   |       |       |               \-- <factor>
+|   |       |       |                   \-- NUMBER "0.05"
+|   |       |       \-- <stmt>
+|   |       |           \-- <assignment>
+|   |       |               |-- TEXT_ID "mb$"
+|   |       |               |-- ASSIGN "="
+|   |       |               \-- <text-assign-expr>
+|   |       |                   \-- <text-assign-item>
+|   |       |                       \-- TEXT_LITERAL "Silver"
+|   |       |-- <option>
+|   |       |   |-- OPTION "OPTION"
+|   |       |   |-- NUMBER "2"
+|   |       |   |-- COLON ":"
+|   |       |   \-- <stmt-list>
+|   |       |       |-- <stmt>
+|   |       |       |   \-- <assignment>
+|   |       |       |       |-- NUM_ID "ds1"
+|   |       |       |       |-- ASSIGN "="
+|   |       |       |       \-- <expr>
+|   |       |       |           \-- <term>
+|   |       |       |               |-- <factor>
+|   |       |       |               |   \-- NUM_ID "sb1"
+|   |       |       |               |-- MULTIPLY "*"
+|   |       |       |               \-- <factor>
+|   |       |       |                   \-- NUMBER "0.12"
+|   |       |       \-- <stmt>
+|   |       |           \-- <assignment>
+|   |       |               |-- TEXT_ID "mb$"
+|   |       |               |-- ASSIGN "="
+|   |       |               \-- <text-assign-expr>
+|   |       |                   \-- <text-assign-item>
+|   |       |                       \-- TEXT_LITERAL "Gold"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "ds1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUMBER "0"
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- TEXT_ID "mb$"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <text-assign-expr>
+|   |       |               \-- <text-assign-item>
+|   |       |                   \-- TEXT_LITERAL "Guest"
+|   |       \-- ENDCHOOSE "ENDCHOOSE"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "sb1"
+|   |       |                   |-- GTE ">="
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "200"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "ds1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               |-- <term>
+|   |       |               |   \-- <factor>
+|   |       |               |       \-- NUM_ID "ds1"
+|   |       |               |-- PLUS "+"
+|   |       |               \-- <term>
+|   |       |                   |-- <factor>
+|   |       |                   |   \-- NUM_ID "sb1"
+|   |       |                   |-- MULTIPLY "*"
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUMBER "0.05"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "ds1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               |-- <term>
+|   |       |               |   \-- <factor>
+|   |       |               |       \-- NUM_ID "ds1"
+|   |       |               |-- PLUS "+"
+|   |       |               \-- <term>
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUMBER "0"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "tx1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               |-- <factor>
+|   |               |   |-- "("
+|   |               |   |-- <expr>
+|   |               |   |   |-- <term>
+|   |               |   |   |   \-- <factor>
+|   |               |   |   |       \-- NUM_ID "sb1"
+|   |               |   |   |-- MINUS "-"
+|   |               |   |   \-- <term>
+|   |               |   |       \-- <factor>
+|   |               |   |           \-- NUM_ID "ds1"
+|   |               |   \-- RPAREN ")"
+|   |               |-- MULTIPLY "*"
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0.06"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "fn1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           |-- <term>
+|   |           |   \-- <factor>
+|   |           |       \-- NUM_ID "sb1"
+|   |           |-- MINUS "-"
+|   |           |-- <term>
+|   |           |   \-- <factor>
+|   |           |       \-- NUM_ID "ds1"
+|   |           |-- PLUS "+"
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUM_ID "tx1"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Cash received:"
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "cp1"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "ch1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           |-- <term>
+|   |           |   \-- <factor>
+|   |           |       \-- NUM_ID "cp1"
+|   |           |-- MINUS "-"
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUM_ID "fn1"
+|   |-- <stmt>
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "receipt"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Member: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- TEXT_ID "mb$"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Subtotal: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "sb1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Discount: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "ds1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Tax (6%): "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "tx1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Final bill: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "fn1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Most expensive line: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "mx1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Cheapest line: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "mn1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Change: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "ch1"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "ch1"
+|   |       |                   |-- GTE ">="
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "0"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Payment complete. Thank you!"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               |-- <text-item>
+|   |       |               |   \-- TEXT_LITERAL "Insufficient payment. Short by "
+|   |       |               |-- AMPERSAND "&"
+|   |       |               \-- <text-item>
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- <builtin-call>
+|   |       |                                   |-- ABS "ABS"
+|   |       |                                   |-- LPAREN "("
+|   |       |                                   |-- <expr>
+|   |       |                                   |   \-- <term>
+|   |       |                                   |       \-- <factor>
+|   |       |                                   |           \-- NUM_ID "ch1"
+|   |       |                                   \-- RPAREN ")"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   \-- <stmt>
+|       \-- <draw>
+|           |-- DRAW "DRAW"
+|           |-- <shape>
+|           |   \-- TRIANGLE
+|           \-- <expr>
+|               \-- <term>
+|                   \-- <factor>
+|                       \-- NUMBER "4"
+\-- THEEND "THEEND"

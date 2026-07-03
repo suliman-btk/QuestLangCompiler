@@ -2,19 +2,70 @@ QuestLang Parse Tree
 <program>
 |-- <id-section>
 |   |-- HERO "HERO"
-|   |-- NAME "GradeHero"
+|   |-- NAME "GradeMaster"
 |   |-- BADGE "BADGE"
 |   \-- NUMBER "1211305566"
 |-- <decl-section>
 |   |-- <decl>
 |   |   |-- STAT
-|   |   \-- NUM_ID "sc1"
+|   |   |-- NUM_ID "ns1"
+|   |   |-- ","
+|   |   |-- NUM_ID "sc1"
+|   |   |-- ","
+|   |   |-- NUM_ID "cr1"
+|   |   |-- ","
+|   |   |-- NUM_ID "qp1"
+|   |   |-- ","
+|   |   |-- NUM_ID "tw1"
+|   |   |-- ","
+|   |   |-- NUM_ID "tc1"
+|   |   |-- ","
+|   |   |-- NUM_ID "gp1"
+|   |   |-- ","
+|   |   |-- NUM_ID "rg1"
+|   |   |-- ","
+|   |   |-- NUM_ID "tt1"
+|   |   |-- ","
+|   |   |-- NUM_ID "av1"
+|   |   |-- ","
+|   |   |-- NUM_ID "mx1"
+|   |   |-- ","
+|   |   |-- NUM_ID "mn1"
+|   |   |-- ","
+|   |   \-- NUM_ID "ps1"
 |   \-- <decl>
 |       |-- TALE
 |       |-- TEXT_ID "nm$"
 |       |-- ","
-|       \-- TEXT_ID "gd$"
+|       |-- TEXT_ID "gd$"
+|       |-- ","
+|       \-- TEXT_ID "st$"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "banner"
+|   |-- <stmt-list>
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "======== STUDENT GRADE QUEST ========"
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- STAR
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "30"
+|   \-- ENDTRICK "ENDTRICK"
 |-- <stmt-list>
+|   |-- <stmt>
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "banner"
 |   |-- <stmt>
 |   |   \-- <ask>
 |   |       |-- ASK "ASK"
@@ -25,10 +76,1047 @@ QuestLang Parse Tree
 |   |-- <stmt>
 |   |   \-- <ask>
 |   |       |-- ASK "ASK"
-|   |       |-- TEXT_LITERAL "Enter score:"
+|   |       |-- TEXT_LITERAL "How many subjects:"
 |   |       |-- COMMA ","
 |   |       \-- <id>
-|   |           \-- NUM_ID "sc1"
+|   |           \-- NUM_ID "ns1"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "tt1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "tw1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "tc1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "mx1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "mn1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "100"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "ps1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <loop>
+|   |       |-- GRIND
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "ns1"
+|   |       |-- TIMES "TIMES"
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter subject score:"
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "sc1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter subject credit hours:"
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "cr1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <choose>
+|   |       |   |       |-- CHOOSE "CHOOSE"
+|   |       |   |       |-- <expr>
+|   |       |   |       |   \-- <term>
+|   |       |   |       |       \-- <factor>
+|   |       |   |       |           \-- NUM_ID "sc1"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "79"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "A-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.93"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "78"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "A-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.87"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "77"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "A-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.8"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "76"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "A-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.73"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "75"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "A-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.67"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "74"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.6"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "73"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.53"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "72"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.47"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "71"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.4"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "70"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.33"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "69"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.27"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "68"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.2"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "67"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.13"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "66"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.07"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "65"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "3.0"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "64"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.93"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "63"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.87"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "62"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.8"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "61"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.73"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "60"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "B-"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.67"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "59"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.59"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "58"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.53"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "57"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.46"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "56"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.4"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "55"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C+"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.33"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "54"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.26"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "53"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.2"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "52"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.13"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "51"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.07"
+|   |       |   |       |-- <option>
+|   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |-- NUMBER "50"
+|   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |       |-- <stmt>
+|   |       |   |       |       |   \-- <assignment>
+|   |       |   |       |       |       |-- TEXT_ID "gd$"
+|   |       |   |       |       |       |-- ASSIGN "="
+|   |       |   |       |       |       \-- <text-assign-expr>
+|   |       |   |       |       |           \-- <text-assign-item>
+|   |       |   |       |       |               \-- TEXT_LITERAL "C"
+|   |       |   |       |       \-- <stmt>
+|   |       |   |       |           \-- <assignment>
+|   |       |   |       |               |-- NUM_ID "qp1"
+|   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |               \-- <expr>
+|   |       |   |       |                   \-- <term>
+|   |       |   |       |                       \-- <factor>
+|   |       |   |       |                           \-- NUMBER "2.0"
+|   |       |   |       |-- OTHERWISE
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <decision>
+|   |       |   |       |           |-- DECIDE "DECIDE"
+|   |       |   |       |           |-- <condition>
+|   |       |   |       |           |   \-- <or-condition>
+|   |       |   |       |           |       \-- <and-condition>
+|   |       |   |       |           |           \-- <not-condition>
+|   |       |   |       |           |               \-- <relation>
+|   |       |   |       |           |                   |-- <expr>
+|   |       |   |       |           |                   |   \-- <term>
+|   |       |   |       |           |                   |       \-- <factor>
+|   |       |   |       |           |                   |           \-- NUM_ID "sc1"
+|   |       |   |       |           |                   |-- GTE ">="
+|   |       |   |       |           |                   \-- <expr>
+|   |       |   |       |           |                       \-- <term>
+|   |       |   |       |           |                           \-- <factor>
+|   |       |   |       |           |                               \-- NUMBER "90"
+|   |       |   |       |           |-- <stmt-list>
+|   |       |   |       |           |   |-- <stmt>
+|   |       |   |       |           |   |   \-- <assignment>
+|   |       |   |       |           |   |       |-- TEXT_ID "gd$"
+|   |       |   |       |           |   |       |-- ASSIGN "="
+|   |       |   |       |           |   |       \-- <text-assign-expr>
+|   |       |   |       |           |   |           \-- <text-assign-item>
+|   |       |   |       |           |   |               \-- TEXT_LITERAL "A+"
+|   |       |   |       |           |   \-- <stmt>
+|   |       |   |       |           |       \-- <assignment>
+|   |       |   |       |           |           |-- NUM_ID "qp1"
+|   |       |   |       |           |           |-- ASSIGN "="
+|   |       |   |       |           |           \-- <expr>
+|   |       |   |       |           |               \-- <term>
+|   |       |   |       |           |                   \-- <factor>
+|   |       |   |       |           |                       \-- NUMBER "4.00"
+|   |       |   |       |           |-- OTHERWISE
+|   |       |   |       |           |-- <stmt-list>
+|   |       |   |       |           |   \-- <stmt>
+|   |       |   |       |           |       \-- <decision>
+|   |       |   |       |           |           |-- DECIDE "DECIDE"
+|   |       |   |       |           |           |-- <condition>
+|   |       |   |       |           |           |   \-- <or-condition>
+|   |       |   |       |           |           |       \-- <and-condition>
+|   |       |   |       |           |           |           \-- <not-condition>
+|   |       |   |       |           |           |               \-- <relation>
+|   |       |   |       |           |           |                   |-- <expr>
+|   |       |   |       |           |           |                   |   \-- <term>
+|   |       |   |       |           |           |                   |       \-- <factor>
+|   |       |   |       |           |           |                   |           \-- NUM_ID "sc1"
+|   |       |   |       |           |           |                   |-- GTE ">="
+|   |       |   |       |           |           |                   \-- <expr>
+|   |       |   |       |           |           |                       \-- <term>
+|   |       |   |       |           |           |                           \-- <factor>
+|   |       |   |       |           |           |                               \-- NUMBER "80"
+|   |       |   |       |           |           |-- <stmt-list>
+|   |       |   |       |           |           |   |-- <stmt>
+|   |       |   |       |           |           |   |   \-- <assignment>
+|   |       |   |       |           |           |   |       |-- TEXT_ID "gd$"
+|   |       |   |       |           |           |   |       |-- ASSIGN "="
+|   |       |   |       |           |           |   |       \-- <text-assign-expr>
+|   |       |   |       |           |           |   |           \-- <text-assign-item>
+|   |       |   |       |           |           |   |               \-- TEXT_LITERAL "A"
+|   |       |   |       |           |           |   \-- <stmt>
+|   |       |   |       |           |           |       \-- <assignment>
+|   |       |   |       |           |           |           |-- NUM_ID "qp1"
+|   |       |   |       |           |           |           |-- ASSIGN "="
+|   |       |   |       |           |           |           \-- <expr>
+|   |       |   |       |           |           |               \-- <term>
+|   |       |   |       |           |           |                   \-- <factor>
+|   |       |   |       |           |           |                       \-- NUMBER "4.00"
+|   |       |   |       |           |           |-- OTHERWISE
+|   |       |   |       |           |           |-- <stmt-list>
+|   |       |   |       |           |           |   \-- <stmt>
+|   |       |   |       |           |           |       \-- <decision>
+|   |       |   |       |           |           |           |-- DECIDE "DECIDE"
+|   |       |   |       |           |           |           |-- <condition>
+|   |       |   |       |           |           |           |   \-- <or-condition>
+|   |       |   |       |           |           |           |       \-- <and-condition>
+|   |       |   |       |           |           |           |           \-- <not-condition>
+|   |       |   |       |           |           |           |               \-- <relation>
+|   |       |   |       |           |           |           |                   |-- <expr>
+|   |       |   |       |           |           |           |                   |   \-- <term>
+|   |       |   |       |           |           |           |                   |       \-- <factor>
+|   |       |   |       |           |           |           |                   |           \-- NUM_ID "sc1"
+|   |       |   |       |           |           |           |                   |-- GTE ">="
+|   |       |   |       |           |           |           |                   \-- <expr>
+|   |       |   |       |           |           |           |                       \-- <term>
+|   |       |   |       |           |           |           |                           \-- <factor>
+|   |       |   |       |           |           |           |                               \-- NUMBER "47"
+|   |       |   |       |           |           |           |-- <stmt-list>
+|   |       |   |       |           |           |           |   |-- <stmt>
+|   |       |   |       |           |           |           |   |   \-- <assignment>
+|   |       |   |       |           |           |           |   |       |-- TEXT_ID "gd$"
+|   |       |   |       |           |           |           |   |       |-- ASSIGN "="
+|   |       |   |       |           |           |           |   |       \-- <text-assign-expr>
+|   |       |   |       |           |           |           |   |           \-- <text-assign-item>
+|   |       |   |       |           |           |           |   |               \-- TEXT_LITERAL "C-"
+|   |       |   |       |           |           |           |   \-- <stmt>
+|   |       |   |       |           |           |           |       \-- <assignment>
+|   |       |   |       |           |           |           |           |-- NUM_ID "qp1"
+|   |       |   |       |           |           |           |           |-- ASSIGN "="
+|   |       |   |       |           |           |           |           \-- <expr>
+|   |       |   |       |           |           |           |               \-- <term>
+|   |       |   |       |           |           |           |                   \-- <factor>
+|   |       |   |       |           |           |           |                       \-- NUMBER "1.67"
+|   |       |   |       |           |           |           |-- OTHERWISE
+|   |       |   |       |           |           |           |-- <stmt-list>
+|   |       |   |       |           |           |           |   \-- <stmt>
+|   |       |   |       |           |           |           |       \-- <decision>
+|   |       |   |       |           |           |           |           |-- DECIDE "DECIDE"
+|   |       |   |       |           |           |           |           |-- <condition>
+|   |       |   |       |           |           |           |           |   \-- <or-condition>
+|   |       |   |       |           |           |           |           |       \-- <and-condition>
+|   |       |   |       |           |           |           |           |           \-- <not-condition>
+|   |       |   |       |           |           |           |           |               \-- <relation>
+|   |       |   |       |           |           |           |           |                   |-- <expr>
+|   |       |   |       |           |           |           |           |                   |   \-- <term>
+|   |       |   |       |           |           |           |           |                   |       \-- <factor>
+|   |       |   |       |           |           |           |           |                   |           \-- NUM_ID "sc1"
+|   |       |   |       |           |           |           |           |                   |-- GTE ">="
+|   |       |   |       |           |           |           |           |                   \-- <expr>
+|   |       |   |       |           |           |           |           |                       \-- <term>
+|   |       |   |       |           |           |           |           |                           \-- <factor>
+|   |       |   |       |           |           |           |           |                               \-- NUMBER "44"
+|   |       |   |       |           |           |           |           |-- <stmt-list>
+|   |       |   |       |           |           |           |           |   |-- <stmt>
+|   |       |   |       |           |           |           |           |   |   \-- <assignment>
+|   |       |   |       |           |           |           |           |   |       |-- TEXT_ID "gd$"
+|   |       |   |       |           |           |           |           |   |       |-- ASSIGN "="
+|   |       |   |       |           |           |           |           |   |       \-- <text-assign-expr>
+|   |       |   |       |           |           |           |           |   |           \-- <text-assign-item>
+|   |       |   |       |           |           |           |           |   |               \-- TEXT_LITERAL "D+"
+|   |       |   |       |           |           |           |           |   \-- <stmt>
+|   |       |   |       |           |           |           |           |       \-- <assignment>
+|   |       |   |       |           |           |           |           |           |-- NUM_ID "qp1"
+|   |       |   |       |           |           |           |           |           |-- ASSIGN "="
+|   |       |   |       |           |           |           |           |           \-- <expr>
+|   |       |   |       |           |           |           |           |               \-- <term>
+|   |       |   |       |           |           |           |           |                   \-- <factor>
+|   |       |   |       |           |           |           |           |                       \-- NUMBER "1.33"
+|   |       |   |       |           |           |           |           |-- OTHERWISE
+|   |       |   |       |           |           |           |           |-- <stmt-list>
+|   |       |   |       |           |           |           |           |   \-- <stmt>
+|   |       |   |       |           |           |           |           |       \-- <decision>
+|   |       |   |       |           |           |           |           |           |-- DECIDE "DECIDE"
+|   |       |   |       |           |           |           |           |           |-- <condition>
+|   |       |   |       |           |           |           |           |           |   \-- <or-condition>
+|   |       |   |       |           |           |           |           |           |       \-- <and-condition>
+|   |       |   |       |           |           |           |           |           |           \-- <not-condition>
+|   |       |   |       |           |           |           |           |           |               \-- <relation>
+|   |       |   |       |           |           |           |           |           |                   |-- <expr>
+|   |       |   |       |           |           |           |           |           |                   |   \-- <term>
+|   |       |   |       |           |           |           |           |           |                   |       \-- <factor>
+|   |       |   |       |           |           |           |           |           |                   |           \-- NUM_ID "sc1"
+|   |       |   |       |           |           |           |           |           |                   |-- GTE ">="
+|   |       |   |       |           |           |           |           |           |                   \-- <expr>
+|   |       |   |       |           |           |           |           |           |                       \-- <term>
+|   |       |   |       |           |           |           |           |           |                           \-- <factor>
+|   |       |   |       |           |           |           |           |           |                               \-- NUMBER "40"
+|   |       |   |       |           |           |           |           |           |-- <stmt-list>
+|   |       |   |       |           |           |           |           |           |   |-- <stmt>
+|   |       |   |       |           |           |           |           |           |   |   \-- <assignment>
+|   |       |   |       |           |           |           |           |           |   |       |-- TEXT_ID "gd$"
+|   |       |   |       |           |           |           |           |           |   |       |-- ASSIGN "="
+|   |       |   |       |           |           |           |           |           |   |       \-- <text-assign-expr>
+|   |       |   |       |           |           |           |           |           |   |           \-- <text-assign-item>
+|   |       |   |       |           |           |           |           |           |   |               \-- TEXT_LITERAL "D"
+|   |       |   |       |           |           |           |           |           |   \-- <stmt>
+|   |       |   |       |           |           |           |           |           |       \-- <assignment>
+|   |       |   |       |           |           |           |           |           |           |-- NUM_ID "qp1"
+|   |       |   |       |           |           |           |           |           |           |-- ASSIGN "="
+|   |       |   |       |           |           |           |           |           |           \-- <expr>
+|   |       |   |       |           |           |           |           |           |               \-- <term>
+|   |       |   |       |           |           |           |           |           |                   \-- <factor>
+|   |       |   |       |           |           |           |           |           |                       \-- NUMBER "1.00"
+|   |       |   |       |           |           |           |           |           |-- OTHERWISE
+|   |       |   |       |           |           |           |           |           |-- <stmt-list>
+|   |       |   |       |           |           |           |           |           |   |-- <stmt>
+|   |       |   |       |           |           |           |           |           |   |   \-- <assignment>
+|   |       |   |       |           |           |           |           |           |   |       |-- TEXT_ID "gd$"
+|   |       |   |       |           |           |           |           |           |   |       |-- ASSIGN "="
+|   |       |   |       |           |           |           |           |           |   |       \-- <text-assign-expr>
+|   |       |   |       |           |           |           |           |           |   |           \-- <text-assign-item>
+|   |       |   |       |           |           |           |           |           |   |               \-- TEXT_LITERAL "F"
+|   |       |   |       |           |           |           |           |           |   \-- <stmt>
+|   |       |   |       |           |           |           |           |           |       \-- <assignment>
+|   |       |   |       |           |           |           |           |           |           |-- NUM_ID "qp1"
+|   |       |   |       |           |           |           |           |           |           |-- ASSIGN "="
+|   |       |   |       |           |           |           |           |           |           \-- <expr>
+|   |       |   |       |           |           |           |           |           |               \-- <term>
+|   |       |   |       |           |           |           |           |           |                   \-- <factor>
+|   |       |   |       |           |           |           |           |           |                       \-- NUMBER "0"
+|   |       |   |       |           |           |           |           |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |       |           |           |           |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |       |           |           |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |       |           |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |       |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |       \-- ENDCHOOSE "ENDCHOOSE"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "tt1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "tt1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "sc1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "mx1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- <builtin-call>
+|   |       |   |                       |-- BIGGER "BIGGER"
+|   |       |   |                       |-- LPAREN "("
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "mx1"
+|   |       |   |                       |-- COMMA ","
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "sc1"
+|   |       |   |                       \-- RPAREN ")"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "mn1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- <builtin-call>
+|   |       |   |                       |-- SMALLER "SMALLER"
+|   |       |   |                       |-- LPAREN "("
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "mn1"
+|   |       |   |                       |-- COMMA ","
+|   |       |   |                       |-- <expr>
+|   |       |   |                       |   \-- <term>
+|   |       |   |                       |       \-- <factor>
+|   |       |   |                       |           \-- NUM_ID "sc1"
+|   |       |   |                       \-- RPAREN ")"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "tw1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "tw1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               |-- <factor>
+|   |       |   |               |   \-- NUM_ID "qp1"
+|   |       |   |               |-- MULTIPLY "*"
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "cr1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "tc1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "tc1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "cr1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <decision>
+|   |       |   |       |-- DECIDE "DECIDE"
+|   |       |   |       |-- <condition>
+|   |       |   |       |   \-- <or-condition>
+|   |       |   |       |       \-- <and-condition>
+|   |       |   |       |           \-- <not-condition>
+|   |       |   |       |               \-- <relation>
+|   |       |   |       |                   |-- <expr>
+|   |       |   |       |                   |   \-- <term>
+|   |       |   |       |                   |       \-- <factor>
+|   |       |   |       |                   |           \-- NUM_ID "qp1"
+|   |       |   |       |                   |-- GT ">"
+|   |       |   |       |                   \-- <expr>
+|   |       |   |       |                       \-- <term>
+|   |       |   |       |                           \-- <factor>
+|   |       |   |       |                               \-- NUMBER "0"
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <assignment>
+|   |       |   |       |           |-- NUM_ID "ps1"
+|   |       |   |       |           |-- ASSIGN "="
+|   |       |   |       |           \-- <expr>
+|   |       |   |       |               |-- <term>
+|   |       |   |       |               |   \-- <factor>
+|   |       |   |       |               |       \-- NUM_ID "ps1"
+|   |       |   |       |               |-- PLUS "+"
+|   |       |   |       |               \-- <term>
+|   |       |   |       |                   \-- <factor>
+|   |       |   |       |                       \-- NUMBER "1"
+|   |       |   |       |-- OTHERWISE
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <say>
+|   |       |   |       |           |-- SAY "SAY"
+|   |       |   |       |           \-- <text-expr>
+|   |       |   |       |               |-- <text-item>
+|   |       |   |       |               |   \-- TEXT_LITERAL "Subject failed (F) with score "
+|   |       |   |       |               |-- AMPERSAND "&"
+|   |       |   |       |               \-- <text-item>
+|   |       |   |       |                   \-- <expr>
+|   |       |   |       |                       \-- <term>
+|   |       |   |       |                           \-- <factor>
+|   |       |   |       |                               \-- NUM_ID "sc1"
+|   |       |   |       \-- ENDDECIDE "ENDDECIDE"
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               |-- <text-item>
+|   |       |               |   \-- TEXT_LITERAL "Score "
+|   |       |               |-- AMPERSAND "&"
+|   |       |               |-- <text-item>
+|   |       |               |   \-- <expr>
+|   |       |               |       \-- <term>
+|   |       |               |           \-- <factor>
+|   |       |               |               \-- NUM_ID "sc1"
+|   |       |               |-- AMPERSAND "&"
+|   |       |               |-- <text-item>
+|   |       |               |   \-- TEXT_LITERAL " ("
+|   |       |               |-- AMPERSAND "&"
+|   |       |               |-- <text-item>
+|   |       |               |   \-- <expr>
+|   |       |               |       \-- <term>
+|   |       |               |           \-- <factor>
+|   |       |               |               \-- NUM_ID "cr1"
+|   |       |               |-- AMPERSAND "&"
+|   |       |               |-- <text-item>
+|   |       |               |   \-- TEXT_LITERAL " cr) -> grade "
+|   |       |               |-- AMPERSAND "&"
+|   |       |               |-- <text-item>
+|   |       |               |   \-- TEXT_ID "gd$"
+|   |       |               |-- AMPERSAND "&"
+|   |       |               |-- <text-item>
+|   |       |               |   \-- TEXT_LITERAL ", QP "
+|   |       |               |-- AMPERSAND "&"
+|   |       |               \-- <text-item>
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUM_ID "qp1"
+|   |       \-- ENDGRIND "ENDGRIND"
 |   |-- <stmt>
 |   |   \-- <decision>
 |   |       |-- DECIDE "DECIDE"
@@ -40,20 +1128,128 @@ QuestLang Parse Tree
 |   |       |                   |-- <expr>
 |   |       |                   |   \-- <term>
 |   |       |                   |       \-- <factor>
-|   |       |                   |           \-- NUM_ID "sc1"
+|   |       |                   |           \-- NUM_ID "ns1"
+|   |       |                   |-- GT ">"
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "0"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "av1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               \-- <term>
+|   |       |                   \-- <factor>
+|   |       |                       \-- <builtin-call>
+|   |       |                           |-- ROUND "ROUND"
+|   |       |                           |-- LPAREN "("
+|   |       |                           |-- <expr>
+|   |       |                           |   \-- <term>
+|   |       |                           |       |-- <factor>
+|   |       |                           |       |   \-- NUM_ID "tt1"
+|   |       |                           |       |-- DIVIDE "/"
+|   |       |                           |       \-- <factor>
+|   |       |                           |           \-- NUM_ID "ns1"
+|   |       |                           \-- RPAREN ")"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "av1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               \-- <term>
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUMBER "0"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "tc1"
+|   |       |                   |-- GT ">"
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "0"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "gp1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               \-- <term>
+|   |       |                   |-- <factor>
+|   |       |                   |   \-- NUM_ID "tw1"
+|   |       |                   |-- DIVIDE "/"
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUM_ID "tc1"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "gp1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               \-- <term>
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUMBER "0"
+|   |       \-- ENDDECIDE "ENDDECIDE"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "rg1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               |-- <factor>
+|   |               |   \-- <builtin-call>
+|   |               |       |-- ROUND "ROUND"
+|   |               |       |-- LPAREN "("
+|   |               |       |-- <expr>
+|   |               |       |   \-- <term>
+|   |               |       |       |-- <factor>
+|   |               |       |       |   \-- NUM_ID "gp1"
+|   |               |       |       |-- MULTIPLY "*"
+|   |               |       |       \-- <factor>
+|   |               |       |           \-- NUMBER "100"
+|   |               |       \-- RPAREN ")"
+|   |               |-- DIVIDE "/"
+|   |               \-- <factor>
+|   |                   \-- NUMBER "100.0"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "gp1"
 |   |       |                   |-- GTE ">="
 |   |       |                   \-- <expr>
 |   |       |                       \-- <term>
 |   |       |                           \-- <factor>
-|   |       |                               \-- NUMBER "90"
+|   |       |                               \-- NUMBER "3.67"
 |   |       |-- <stmt-list>
 |   |       |   \-- <stmt>
 |   |       |       \-- <assignment>
-|   |       |           |-- TEXT_ID "gd$"
+|   |       |           |-- TEXT_ID "st$"
 |   |       |           |-- ASSIGN "="
 |   |       |           \-- <text-assign-expr>
 |   |       |               \-- <text-assign-item>
-|   |       |                   \-- TEXT_LITERAL "A"
+|   |       |                   \-- TEXT_LITERAL "Dean's List"
 |   |       |-- OTHERWISE
 |   |       |-- <stmt-list>
 |   |       |   \-- <stmt>
@@ -67,139 +1263,138 @@ QuestLang Parse Tree
 |   |       |           |                   |-- <expr>
 |   |       |           |                   |   \-- <term>
 |   |       |           |                   |       \-- <factor>
-|   |       |           |                   |           \-- NUM_ID "sc1"
+|   |       |           |                   |           \-- NUM_ID "gp1"
 |   |       |           |                   |-- GTE ">="
 |   |       |           |                   \-- <expr>
 |   |       |           |                       \-- <term>
 |   |       |           |                           \-- <factor>
-|   |       |           |                               \-- NUMBER "80"
+|   |       |           |                               \-- NUMBER "2.0"
 |   |       |           |-- <stmt-list>
 |   |       |           |   \-- <stmt>
 |   |       |           |       \-- <assignment>
-|   |       |           |           |-- TEXT_ID "gd$"
+|   |       |           |           |-- TEXT_ID "st$"
 |   |       |           |           |-- ASSIGN "="
 |   |       |           |           \-- <text-assign-expr>
 |   |       |           |               \-- <text-assign-item>
-|   |       |           |                   \-- TEXT_LITERAL "B"
+|   |       |           |                   \-- TEXT_LITERAL "Good standing"
 |   |       |           |-- OTHERWISE
 |   |       |           |-- <stmt-list>
 |   |       |           |   \-- <stmt>
-|   |       |           |       \-- <decision>
-|   |       |           |           |-- DECIDE "DECIDE"
-|   |       |           |           |-- <condition>
-|   |       |           |           |   \-- <or-condition>
-|   |       |           |           |       \-- <and-condition>
-|   |       |           |           |           \-- <not-condition>
-|   |       |           |           |               \-- <relation>
-|   |       |           |           |                   |-- <expr>
-|   |       |           |           |                   |   \-- <term>
-|   |       |           |           |                   |       \-- <factor>
-|   |       |           |           |                   |           \-- NUM_ID "sc1"
-|   |       |           |           |                   |-- GTE ">="
-|   |       |           |           |                   \-- <expr>
-|   |       |           |           |                       \-- <term>
-|   |       |           |           |                           \-- <factor>
-|   |       |           |           |                               \-- NUMBER "70"
-|   |       |           |           |-- <stmt-list>
-|   |       |           |           |   \-- <stmt>
-|   |       |           |           |       \-- <assignment>
-|   |       |           |           |           |-- TEXT_ID "gd$"
-|   |       |           |           |           |-- ASSIGN "="
-|   |       |           |           |           \-- <text-assign-expr>
-|   |       |           |           |               \-- <text-assign-item>
-|   |       |           |           |                   \-- TEXT_LITERAL "C"
-|   |       |           |           |-- OTHERWISE
-|   |       |           |           |-- <stmt-list>
-|   |       |           |           |   \-- <stmt>
-|   |       |           |           |       \-- <decision>
-|   |       |           |           |           |-- DECIDE "DECIDE"
-|   |       |           |           |           |-- <condition>
-|   |       |           |           |           |   \-- <or-condition>
-|   |       |           |           |           |       \-- <and-condition>
-|   |       |           |           |           |           \-- <not-condition>
-|   |       |           |           |           |               \-- <relation>
-|   |       |           |           |           |                   |-- <expr>
-|   |       |           |           |           |                   |   \-- <term>
-|   |       |           |           |           |                   |       \-- <factor>
-|   |       |           |           |           |                   |           \-- NUM_ID "sc1"
-|   |       |           |           |           |                   |-- GTE ">="
-|   |       |           |           |           |                   \-- <expr>
-|   |       |           |           |           |                       \-- <term>
-|   |       |           |           |           |                           \-- <factor>
-|   |       |           |           |           |                               \-- NUMBER "60"
-|   |       |           |           |           |-- <stmt-list>
-|   |       |           |           |           |   \-- <stmt>
-|   |       |           |           |           |       \-- <assignment>
-|   |       |           |           |           |           |-- TEXT_ID "gd$"
-|   |       |           |           |           |           |-- ASSIGN "="
-|   |       |           |           |           |           \-- <text-assign-expr>
-|   |       |           |           |           |               \-- <text-assign-item>
-|   |       |           |           |           |                   \-- TEXT_LITERAL "D"
-|   |       |           |           |           |-- OTHERWISE
-|   |       |           |           |           |-- <stmt-list>
-|   |       |           |           |           |   \-- <stmt>
-|   |       |           |           |           |       \-- <assignment>
-|   |       |           |           |           |           |-- TEXT_ID "gd$"
-|   |       |           |           |           |           |-- ASSIGN "="
-|   |       |           |           |           |           \-- <text-assign-expr>
-|   |       |           |           |           |               \-- <text-assign-item>
-|   |       |           |           |           |                   \-- TEXT_LITERAL "F"
-|   |       |           |           |           \-- ENDDECIDE "ENDDECIDE"
-|   |       |           |           \-- ENDDECIDE "ENDDECIDE"
+|   |       |           |       \-- <assignment>
+|   |       |           |           |-- TEXT_ID "st$"
+|   |       |           |           |-- ASSIGN "="
+|   |       |           |           \-- <text-assign-expr>
+|   |       |           |               \-- <text-assign-item>
+|   |       |           |                   \-- TEXT_LITERAL "Academic probation"
 |   |       |           \-- ENDDECIDE "ENDDECIDE"
 |   |       \-- ENDDECIDE "ENDDECIDE"
+|   |-- <stmt>
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "banner"
 |   |-- <stmt>
 |   |   \-- <say>
 |   |       |-- SAY "SAY"
 |   |       \-- <text-expr>
 |   |           |-- <text-item>
-|   |           |   \-- TEXT_ID "nm$"
+|   |           |   \-- TEXT_LITERAL "Student: "
 |   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- TEXT_ID "nm$"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
 |   |           |-- <text-item>
-|   |           |   \-- TEXT_LITERAL " scored "
+|   |           |   \-- TEXT_LITERAL "Total credit hours: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "tc1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Average score: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "av1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Highest: "
 |   |           |-- AMPERSAND "&"
 |   |           |-- <text-item>
 |   |           |   \-- <expr>
 |   |           |       \-- <term>
 |   |           |           \-- <factor>
-|   |           |               \-- NUM_ID "sc1"
+|   |           |               \-- NUM_ID "mx1"
 |   |           |-- AMPERSAND "&"
 |   |           |-- <text-item>
-|   |           |   \-- TEXT_LITERAL " and received grade "
+|   |           |   \-- TEXT_LITERAL "  Lowest: "
 |   |           |-- AMPERSAND "&"
 |   |           \-- <text-item>
-|   |               \-- TEXT_ID "gd$"
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "mn1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Subjects passed: "
+|   |           |-- AMPERSAND "&"
+|   |           |-- <text-item>
+|   |           |   \-- <expr>
+|   |           |       \-- <term>
+|   |           |           \-- <factor>
+|   |           |               \-- NUM_ID "ps1"
+|   |           |-- AMPERSAND "&"
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL " of "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "ns1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "GPA (credit-weighted): "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "rg1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Standing: "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- TEXT_ID "st$"
 |   \-- <stmt>
-|       \-- <decision>
-|           |-- DECIDE "DECIDE"
-|           |-- <condition>
-|           |   \-- <or-condition>
-|           |       \-- <and-condition>
-|           |           \-- <not-condition>
-|           |               \-- <relation>
-|           |                   |-- <expr>
-|           |                   |   \-- <term>
-|           |                   |       \-- <factor>
-|           |                   |           \-- NUM_ID "sc1"
-|           |                   |-- GTE ">="
-|           |                   \-- <expr>
-|           |                       \-- <term>
-|           |                           \-- <factor>
-|           |                               \-- NUMBER "60"
-|           |-- <stmt-list>
-|           |   \-- <stmt>
-|           |       \-- <say>
-|           |           |-- SAY "SAY"
-|           |           \-- <text-expr>
-|           |               \-- <text-item>
-|           |                   \-- TEXT_LITERAL "Status: Pass"
-|           |-- OTHERWISE
-|           |-- <stmt-list>
-|           |   \-- <stmt>
-|           |       \-- <say>
-|           |           |-- SAY "SAY"
-|           |           \-- <text-expr>
-|           |               \-- <text-item>
-|           |                   \-- TEXT_LITERAL "Status: Fail"
-|           \-- ENDDECIDE "ENDDECIDE"
+|       \-- <draw>
+|           |-- DRAW "DRAW"
+|           |-- <shape>
+|           |   \-- BOX
+|           \-- <expr>
+|               \-- <term>
+|                   \-- <factor>
+|                       \-- NUMBER "3"
 \-- THEEND "THEEND"

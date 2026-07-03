@@ -2,189 +2,440 @@ QuestLang Parse Tree
 <program>
 |-- <id-section>
 |   |-- HERO "HERO"
-|   |-- NAME "CalculatorHero"
+|   |-- NAME "CalcMaster"
 |   |-- BADGE "BADGE"
 |   \-- NUMBER "1211305566"
 |-- <decl-section>
 |   \-- <decl>
 |       |-- STAT
-|       |-- NUM_ID "aa1"
+|       |-- NUM_ID "nn1"
 |       |-- ","
-|       |-- NUM_ID "bb1"
+|       |-- NUM_ID "rm1"
+|       |-- ","
+|       |-- NUM_ID "xx1"
 |       |-- ","
 |       |-- NUM_ID "op1"
 |       |-- ","
-|       \-- NUM_ID "rs1"
+|       |-- NUM_ID "ac1"
+|       |-- ","
+|       |-- NUM_ID "gc1"
+|       |-- ","
+|       |-- NUM_ID "mm1"
+|       |-- ","
+|       \-- NUM_ID "cn1"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "banner"
+|   |-- <stmt-list>
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "===================================="
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "     QUESTLANG EXPRESSION CALC       "
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "===================================="
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- STAR
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "30"
+|   \-- ENDTRICK "ENDTRICK"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "line"
+|   |-- <stmt-list>
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- STAR
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "20"
+|   \-- ENDTRICK "ENDTRICK"
 |-- <stmt-list>
 |   |-- <stmt>
-|   |   \-- <ask>
-|   |       |-- ASK "ASK"
-|   |       |-- TEXT_LITERAL "Enter first number:"
-|   |       |-- COMMA ","
-|   |       \-- <id>
-|   |           \-- NUM_ID "aa1"
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "banner"
 |   |-- <stmt>
-|   |   \-- <ask>
-|   |       |-- ASK "ASK"
-|   |       |-- TEXT_LITERAL "Enter second number:"
-|   |       |-- COMMA ","
-|   |       \-- <id>
-|   |           \-- NUM_ID "bb1"
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "mm1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
 |   |-- <stmt>
-|   |   \-- <ask>
-|   |       |-- ASK "ASK"
-|   |       |-- TEXT_LITERAL "Choose operation 1 add 2 subtract 3 multiply 4 divide:"
-|   |       |-- COMMA ","
-|   |       \-- <id>
-|   |           \-- NUM_ID "op1"
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "cn1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
+|   |-- <stmt>
+|   |   \-- <loop>
+|   |       |-- GRIND
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "How many numbers:"
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "nn1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <ask>
+|   |       |   |       |-- ASK "ASK"
+|   |       |   |       |-- TEXT_LITERAL "Enter number 1:"
+|   |       |   |       |-- COMMA ","
+|   |       |   |       \-- <id>
+|   |       |   |           \-- NUM_ID "ac1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "rm1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "nn1"
+|   |       |   |           |-- MINUS "-"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUMBER "1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <loop>
+|   |       |   |       |-- GRIND
+|   |       |   |       |-- <expr>
+|   |       |   |       |   \-- <term>
+|   |       |   |       |       \-- <factor>
+|   |       |   |       |           \-- NUM_ID "rm1"
+|   |       |   |       |-- TIMES "TIMES"
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   |-- <stmt>
+|   |       |   |       |   |   \-- <ask>
+|   |       |   |       |   |       |-- ASK "ASK"
+|   |       |   |       |   |       |-- TEXT_LITERAL "Operator 1+ 2- 3* 4/ 5max 6min:"
+|   |       |   |       |   |       |-- COMMA ","
+|   |       |   |       |   |       \-- <id>
+|   |       |   |       |   |           \-- NUM_ID "op1"
+|   |       |   |       |   |-- <stmt>
+|   |       |   |       |   |   \-- <ask>
+|   |       |   |       |   |       |-- ASK "ASK"
+|   |       |   |       |   |       |-- TEXT_LITERAL "Enter next number:"
+|   |       |   |       |   |       |-- COMMA ","
+|   |       |   |       |   |       \-- <id>
+|   |       |   |       |   |           \-- NUM_ID "xx1"
+|   |       |   |       |   |-- <stmt>
+|   |       |   |       |   |   \-- <choose>
+|   |       |   |       |   |       |-- CHOOSE "CHOOSE"
+|   |       |   |       |   |       |-- <expr>
+|   |       |   |       |   |       |   \-- <term>
+|   |       |   |       |   |       |       \-- <factor>
+|   |       |   |       |   |       |           \-- NUM_ID "op1"
+|   |       |   |       |   |       |-- <option>
+|   |       |   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |       |   |-- NUMBER "1"
+|   |       |   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |   |       |       \-- <stmt>
+|   |       |   |       |   |       |           \-- <assignment>
+|   |       |   |       |   |       |               |-- NUM_ID "ac1"
+|   |       |   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |   |       |               \-- <expr>
+|   |       |   |       |   |       |                   |-- <term>
+|   |       |   |       |   |       |                   |   \-- <factor>
+|   |       |   |       |   |       |                   |       \-- NUM_ID "ac1"
+|   |       |   |       |   |       |                   |-- PLUS "+"
+|   |       |   |       |   |       |                   \-- <term>
+|   |       |   |       |   |       |                       \-- <factor>
+|   |       |   |       |   |       |                           \-- NUM_ID "xx1"
+|   |       |   |       |   |       |-- <option>
+|   |       |   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |       |   |-- NUMBER "2"
+|   |       |   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |   |       |       \-- <stmt>
+|   |       |   |       |   |       |           \-- <assignment>
+|   |       |   |       |   |       |               |-- NUM_ID "ac1"
+|   |       |   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |   |       |               \-- <expr>
+|   |       |   |       |   |       |                   |-- <term>
+|   |       |   |       |   |       |                   |   \-- <factor>
+|   |       |   |       |   |       |                   |       \-- NUM_ID "ac1"
+|   |       |   |       |   |       |                   |-- MINUS "-"
+|   |       |   |       |   |       |                   \-- <term>
+|   |       |   |       |   |       |                       \-- <factor>
+|   |       |   |       |   |       |                           \-- NUM_ID "xx1"
+|   |       |   |       |   |       |-- <option>
+|   |       |   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |       |   |-- NUMBER "3"
+|   |       |   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |   |       |       \-- <stmt>
+|   |       |   |       |   |       |           \-- <assignment>
+|   |       |   |       |   |       |               |-- NUM_ID "ac1"
+|   |       |   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |   |       |               \-- <expr>
+|   |       |   |       |   |       |                   \-- <term>
+|   |       |   |       |   |       |                       |-- <factor>
+|   |       |   |       |   |       |                       |   \-- NUM_ID "ac1"
+|   |       |   |       |   |       |                       |-- MULTIPLY "*"
+|   |       |   |       |   |       |                       \-- <factor>
+|   |       |   |       |   |       |                           \-- NUM_ID "xx1"
+|   |       |   |       |   |       |-- <option>
+|   |       |   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |       |   |-- NUMBER "4"
+|   |       |   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |   |       |       \-- <stmt>
+|   |       |   |       |   |       |           \-- <decision>
+|   |       |   |       |   |       |               |-- DECIDE "DECIDE"
+|   |       |   |       |   |       |               |-- <condition>
+|   |       |   |       |   |       |               |   \-- <or-condition>
+|   |       |   |       |   |       |               |       \-- <and-condition>
+|   |       |   |       |   |       |               |           \-- <not-condition>
+|   |       |   |       |   |       |               |               \-- <relation>
+|   |       |   |       |   |       |               |                   |-- <expr>
+|   |       |   |       |   |       |               |                   |   \-- <term>
+|   |       |   |       |   |       |               |                   |       \-- <factor>
+|   |       |   |       |   |       |               |                   |           \-- NUM_ID "xx1"
+|   |       |   |       |   |       |               |                   |-- NEQ "<>"
+|   |       |   |       |   |       |               |                   \-- <expr>
+|   |       |   |       |   |       |               |                       \-- <term>
+|   |       |   |       |   |       |               |                           \-- <factor>
+|   |       |   |       |   |       |               |                               \-- NUMBER "0"
+|   |       |   |       |   |       |               |-- <stmt-list>
+|   |       |   |       |   |       |               |   \-- <stmt>
+|   |       |   |       |   |       |               |       \-- <assignment>
+|   |       |   |       |   |       |               |           |-- NUM_ID "ac1"
+|   |       |   |       |   |       |               |           |-- ASSIGN "="
+|   |       |   |       |   |       |               |           \-- <expr>
+|   |       |   |       |   |       |               |               \-- <term>
+|   |       |   |       |   |       |               |                   |-- <factor>
+|   |       |   |       |   |       |               |                   |   \-- NUM_ID "ac1"
+|   |       |   |       |   |       |               |                   |-- DIVIDE "/"
+|   |       |   |       |   |       |               |                   \-- <factor>
+|   |       |   |       |   |       |               |                       \-- NUM_ID "xx1"
+|   |       |   |       |   |       |               |-- OTHERWISE
+|   |       |   |       |   |       |               |-- <stmt-list>
+|   |       |   |       |   |       |               |   \-- <stmt>
+|   |       |   |       |   |       |               |       \-- <say>
+|   |       |   |       |   |       |               |           |-- SAY "SAY"
+|   |       |   |       |   |       |               |           \-- <text-expr>
+|   |       |   |       |   |       |               |               \-- <text-item>
+|   |       |   |       |   |       |               |                   \-- TEXT_LITERAL "Skipped a division by zero."
+|   |       |   |       |   |       |               \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |       |   |       |-- <option>
+|   |       |   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |       |   |-- NUMBER "5"
+|   |       |   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |   |       |       \-- <stmt>
+|   |       |   |       |   |       |           \-- <assignment>
+|   |       |   |       |   |       |               |-- NUM_ID "ac1"
+|   |       |   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |   |       |               \-- <expr>
+|   |       |   |       |   |       |                   \-- <term>
+|   |       |   |       |   |       |                       \-- <factor>
+|   |       |   |       |   |       |                           \-- <builtin-call>
+|   |       |   |       |   |       |                               |-- BIGGER "BIGGER"
+|   |       |   |       |   |       |                               |-- LPAREN "("
+|   |       |   |       |   |       |                               |-- <expr>
+|   |       |   |       |   |       |                               |   \-- <term>
+|   |       |   |       |   |       |                               |       \-- <factor>
+|   |       |   |       |   |       |                               |           \-- NUM_ID "ac1"
+|   |       |   |       |   |       |                               |-- COMMA ","
+|   |       |   |       |   |       |                               |-- <expr>
+|   |       |   |       |   |       |                               |   \-- <term>
+|   |       |   |       |   |       |                               |       \-- <factor>
+|   |       |   |       |   |       |                               |           \-- NUM_ID "xx1"
+|   |       |   |       |   |       |                               \-- RPAREN ")"
+|   |       |   |       |   |       |-- <option>
+|   |       |   |       |   |       |   |-- OPTION "OPTION"
+|   |       |   |       |   |       |   |-- NUMBER "6"
+|   |       |   |       |   |       |   |-- COLON ":"
+|   |       |   |       |   |       |   \-- <stmt-list>
+|   |       |   |       |   |       |       \-- <stmt>
+|   |       |   |       |   |       |           \-- <assignment>
+|   |       |   |       |   |       |               |-- NUM_ID "ac1"
+|   |       |   |       |   |       |               |-- ASSIGN "="
+|   |       |   |       |   |       |               \-- <expr>
+|   |       |   |       |   |       |                   \-- <term>
+|   |       |   |       |   |       |                       \-- <factor>
+|   |       |   |       |   |       |                           \-- <builtin-call>
+|   |       |   |       |   |       |                               |-- SMALLER "SMALLER"
+|   |       |   |       |   |       |                               |-- LPAREN "("
+|   |       |   |       |   |       |                               |-- <expr>
+|   |       |   |       |   |       |                               |   \-- <term>
+|   |       |   |       |   |       |                               |       \-- <factor>
+|   |       |   |       |   |       |                               |           \-- NUM_ID "ac1"
+|   |       |   |       |   |       |                               |-- COMMA ","
+|   |       |   |       |   |       |                               |-- <expr>
+|   |       |   |       |   |       |                               |   \-- <term>
+|   |       |   |       |   |       |                               |       \-- <factor>
+|   |       |   |       |   |       |                               |           \-- NUM_ID "xx1"
+|   |       |   |       |   |       |                               \-- RPAREN ")"
+|   |       |   |       |   |       |-- OTHERWISE
+|   |       |   |       |   |       |-- <stmt-list>
+|   |       |   |       |   |       |   \-- <stmt>
+|   |       |   |       |   |       |       \-- <say>
+|   |       |   |       |   |       |           |-- SAY "SAY"
+|   |       |   |       |   |       |           \-- <text-expr>
+|   |       |   |       |   |       |               \-- <text-item>
+|   |       |   |       |   |       |                   \-- TEXT_LITERAL "Unknown operator, keeping current value."
+|   |       |   |       |   |       \-- ENDCHOOSE "ENDCHOOSE"
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <say>
+|   |       |   |       |           |-- SAY "SAY"
+|   |       |   |       |           \-- <text-expr>
+|   |       |   |       |               |-- <text-item>
+|   |       |   |       |               |   \-- TEXT_LITERAL "Running value = "
+|   |       |   |       |               |-- AMPERSAND "&"
+|   |       |   |       |               \-- <text-item>
+|   |       |   |       |                   \-- <expr>
+|   |       |   |       |                       \-- <term>
+|   |       |   |       |                           \-- <factor>
+|   |       |   |       |                               \-- NUM_ID "ac1"
+|   |       |   |       \-- ENDGRIND "ENDGRIND"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <say>
+|   |       |   |       |-- SAY "SAY"
+|   |       |   |       \-- <text-expr>
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL "Final result = "
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           \-- <text-item>
+|   |       |   |               \-- <expr>
+|   |       |   |                   \-- <term>
+|   |       |   |                       \-- <factor>
+|   |       |   |                           \-- NUM_ID "ac1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "mm1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "mm1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "ac1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "cn1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "cn1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUMBER "1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <perform>
+|   |       |   |       |-- PERFORM "PERFORM"
+|   |       |   |       \-- NAME "line"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <say>
+|   |       |   |       |-- SAY "SAY"
+|   |       |   |       \-- <text-expr>
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL "Running memory total = "
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           \-- <text-item>
+|   |       |   |               \-- <expr>
+|   |       |   |                   \-- <term>
+|   |       |   |                       \-- <factor>
+|   |       |   |                           \-- NUM_ID "mm1"
+|   |       |   \-- <stmt>
+|   |       |       \-- <ask>
+|   |       |           |-- ASK "ASK"
+|   |       |           |-- TEXT_LITERAL "Compute another? 1 yes 0 no:"
+|   |       |           |-- COMMA ","
+|   |       |           \-- <id>
+|   |       |               \-- NUM_ID "gc1"
+|   |       |-- UNTIL "UNTIL"
+|   |       \-- <condition>
+|   |           \-- <or-condition>
+|   |               \-- <and-condition>
+|   |                   \-- <not-condition>
+|   |                       \-- <relation>
+|   |                           |-- <expr>
+|   |                           |   \-- <term>
+|   |                           |       \-- <factor>
+|   |                           |           \-- NUM_ID "gc1"
+|   |                           |-- EQ "=="
+|   |                           \-- <expr>
+|   |                               \-- <term>
+|   |                                   \-- <factor>
+|   |                                       \-- NUMBER "0"
 |   \-- <stmt>
-|       \-- <choose>
-|           |-- CHOOSE "CHOOSE"
-|           |-- <expr>
-|           |   \-- <term>
-|           |       \-- <factor>
-|           |           \-- NUM_ID "op1"
-|           |-- <option>
-|           |   |-- OPTION "OPTION"
-|           |   |-- NUMBER "1"
-|           |   |-- COLON ":"
-|           |   \-- <stmt-list>
-|           |       |-- <stmt>
-|           |       |   \-- <assignment>
-|           |       |       |-- NUM_ID "rs1"
-|           |       |       |-- ASSIGN "="
-|           |       |       \-- <expr>
-|           |       |           |-- <term>
-|           |       |           |   \-- <factor>
-|           |       |           |       \-- NUM_ID "aa1"
-|           |       |           |-- PLUS "+"
-|           |       |           \-- <term>
-|           |       |               \-- <factor>
-|           |       |                   \-- NUM_ID "bb1"
-|           |       \-- <stmt>
-|           |           \-- <say>
-|           |               |-- SAY "SAY"
-|           |               \-- <text-expr>
-|           |                   |-- <text-item>
-|           |                   |   \-- TEXT_LITERAL "Addition result is "
-|           |                   |-- AMPERSAND "&"
-|           |                   \-- <text-item>
-|           |                       \-- <expr>
-|           |                           \-- <term>
-|           |                               \-- <factor>
-|           |                                   \-- NUM_ID "rs1"
-|           |-- <option>
-|           |   |-- OPTION "OPTION"
-|           |   |-- NUMBER "2"
-|           |   |-- COLON ":"
-|           |   \-- <stmt-list>
-|           |       |-- <stmt>
-|           |       |   \-- <assignment>
-|           |       |       |-- NUM_ID "rs1"
-|           |       |       |-- ASSIGN "="
-|           |       |       \-- <expr>
-|           |       |           |-- <term>
-|           |       |           |   \-- <factor>
-|           |       |           |       \-- NUM_ID "aa1"
-|           |       |           |-- MINUS "-"
-|           |       |           \-- <term>
-|           |       |               \-- <factor>
-|           |       |                   \-- NUM_ID "bb1"
-|           |       \-- <stmt>
-|           |           \-- <say>
-|           |               |-- SAY "SAY"
-|           |               \-- <text-expr>
-|           |                   |-- <text-item>
-|           |                   |   \-- TEXT_LITERAL "Subtraction result is "
-|           |                   |-- AMPERSAND "&"
-|           |                   \-- <text-item>
-|           |                       \-- <expr>
-|           |                           \-- <term>
-|           |                               \-- <factor>
-|           |                                   \-- NUM_ID "rs1"
-|           |-- <option>
-|           |   |-- OPTION "OPTION"
-|           |   |-- NUMBER "3"
-|           |   |-- COLON ":"
-|           |   \-- <stmt-list>
-|           |       |-- <stmt>
-|           |       |   \-- <assignment>
-|           |       |       |-- NUM_ID "rs1"
-|           |       |       |-- ASSIGN "="
-|           |       |       \-- <expr>
-|           |       |           \-- <term>
-|           |       |               |-- <factor>
-|           |       |               |   \-- NUM_ID "aa1"
-|           |       |               |-- MULTIPLY "*"
-|           |       |               \-- <factor>
-|           |       |                   \-- NUM_ID "bb1"
-|           |       \-- <stmt>
-|           |           \-- <say>
-|           |               |-- SAY "SAY"
-|           |               \-- <text-expr>
-|           |                   |-- <text-item>
-|           |                   |   \-- TEXT_LITERAL "Multiplication result is "
-|           |                   |-- AMPERSAND "&"
-|           |                   \-- <text-item>
-|           |                       \-- <expr>
-|           |                           \-- <term>
-|           |                               \-- <factor>
-|           |                                   \-- NUM_ID "rs1"
-|           |-- <option>
-|           |   |-- OPTION "OPTION"
-|           |   |-- NUMBER "4"
-|           |   |-- COLON ":"
-|           |   \-- <stmt-list>
-|           |       \-- <stmt>
-|           |           \-- <decision>
-|           |               |-- DECIDE "DECIDE"
-|           |               |-- <condition>
-|           |               |   \-- <or-condition>
-|           |               |       \-- <and-condition>
-|           |               |           \-- <not-condition>
-|           |               |               \-- <relation>
-|           |               |                   |-- <expr>
-|           |               |                   |   \-- <term>
-|           |               |                   |       \-- <factor>
-|           |               |                   |           \-- NUM_ID "bb1"
-|           |               |                   |-- NEQ "<>"
-|           |               |                   \-- <expr>
-|           |               |                       \-- <term>
-|           |               |                           \-- <factor>
-|           |               |                               \-- NUMBER "0"
-|           |               |-- <stmt-list>
-|           |               |   |-- <stmt>
-|           |               |   |   \-- <assignment>
-|           |               |   |       |-- NUM_ID "rs1"
-|           |               |   |       |-- ASSIGN "="
-|           |               |   |       \-- <expr>
-|           |               |   |           \-- <term>
-|           |               |   |               |-- <factor>
-|           |               |   |               |   \-- NUM_ID "aa1"
-|           |               |   |               |-- DIVIDE "/"
-|           |               |   |               \-- <factor>
-|           |               |   |                   \-- NUM_ID "bb1"
-|           |               |   \-- <stmt>
-|           |               |       \-- <say>
-|           |               |           |-- SAY "SAY"
-|           |               |           \-- <text-expr>
-|           |               |               |-- <text-item>
-|           |               |               |   \-- TEXT_LITERAL "Division result is "
-|           |               |               |-- AMPERSAND "&"
-|           |               |               \-- <text-item>
-|           |               |                   \-- <expr>
-|           |               |                       \-- <term>
-|           |               |                           \-- <factor>
-|           |               |                               \-- NUM_ID "rs1"
-|           |               |-- OTHERWISE
-|           |               |-- <stmt-list>
-|           |               |   \-- <stmt>
-|           |               |       \-- <say>
-|           |               |           |-- SAY "SAY"
-|           |               |           \-- <text-expr>
-|           |               |               \-- <text-item>
-|           |               |                   \-- TEXT_LITERAL "Cannot divide by zero."
-|           |               \-- ENDDECIDE "ENDDECIDE"
+|       \-- <decision>
+|           |-- DECIDE "DECIDE"
+|           |-- <condition>
+|           |   \-- <or-condition>
+|           |       \-- <and-condition>
+|           |           \-- <not-condition>
+|           |               \-- <relation>
+|           |                   |-- <expr>
+|           |                   |   \-- <term>
+|           |                   |       \-- <factor>
+|           |                   |           \-- NUM_ID "cn1"
+|           |                   |-- GT ">"
+|           |                   \-- <expr>
+|           |                       \-- <term>
+|           |                           \-- <factor>
+|           |                               \-- NUMBER "0"
+|           |-- <stmt-list>
+|           |   |-- <stmt>
+|           |   |   \-- <say>
+|           |   |       |-- SAY "SAY"
+|           |   |       \-- <text-expr>
+|           |   |           |-- <text-item>
+|           |   |           |   \-- TEXT_LITERAL "Number of calculations = "
+|           |   |           |-- AMPERSAND "&"
+|           |   |           \-- <text-item>
+|           |   |               \-- <expr>
+|           |   |                   \-- <term>
+|           |   |                       \-- <factor>
+|           |   |                           \-- NUM_ID "cn1"
+|           |   \-- <stmt>
+|           |       \-- <say>
+|           |           |-- SAY "SAY"
+|           |           \-- <text-expr>
+|           |               |-- <text-item>
+|           |               |   \-- TEXT_LITERAL "Average of results = "
+|           |               |-- AMPERSAND "&"
+|           |               \-- <text-item>
+|           |                   \-- <expr>
+|           |                       \-- <term>
+|           |                           |-- <factor>
+|           |                           |   \-- NUM_ID "mm1"
+|           |                           |-- DIVIDE "/"
+|           |                           \-- <factor>
+|           |                               \-- NUM_ID "cn1"
 |           |-- OTHERWISE
 |           |-- <stmt-list>
 |           |   \-- <stmt>
@@ -192,6 +443,6 @@ QuestLang Parse Tree
 |           |           |-- SAY "SAY"
 |           |           \-- <text-expr>
 |           |               \-- <text-item>
-|           |                   \-- TEXT_LITERAL "Unknown calculator operation."
-|           \-- ENDCHOOSE "ENDCHOOSE"
+|           |                   \-- TEXT_LITERAL "No calculations performed."
+|           \-- ENDDECIDE "ENDDECIDE"
 \-- THEEND "THEEND"

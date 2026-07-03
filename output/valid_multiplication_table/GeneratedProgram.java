@@ -6,32 +6,67 @@ public class GeneratedProgram {
 
     private static double nn1;
     private static double lm1;
+    private static double st1;
     private static double ii1;
     private static double rs1;
+    private static double sm1;
+    private static double hv1;
+    private static String tg_text = "";
+
+    private static void trick_header() {
+        System.out.println("======= MULTIPLICATION QUEST =======");
+        drawStar(28);
+    }
 
     public static void main(String[] args) {
+        trick_header();
         System.out.print("Enter table number:");
         nn1 = readNumber();
+        System.out.print("Enter start value:");
+        st1 = readNumber();
         System.out.print("Enter table limit:");
         lm1 = readNumber();
-        ii1 = 1;
+        sm1 = 0;
+        ii1 = st1;
         {
-            double journeyStart0 = 1;
+            double journeyStart0 = st1;
             double journeyEnd0 = lm1;
             if (journeyStart0 <= journeyEnd0) {
                 for (double journeyCounter0 = journeyStart0; journeyCounter0 <= journeyEnd0; journeyCounter0++) {
                     rs1 = (nn1 * ii1);
-                    System.out.println(nn1 + " x " + ii1 + " = " + rs1);
+                    sm1 = (sm1 + rs1);
+                    hv1 = (Math.round((rs1 / 2)) * 2);
+                    if (hv1 == rs1) {
+                        tg_text = "even";
+                    } else {
+                        tg_text = "odd";
+                    }
+                    System.out.println(nn1 + " x " + ii1 + " = " + rs1 + "  (" + tg_text + ")");
                     ii1 = (ii1 + 1);
                 }
             } else {
                 for (double journeyCounter0 = journeyStart0; journeyCounter0 >= journeyEnd0; journeyCounter0--) {
                     rs1 = (nn1 * ii1);
-                    System.out.println(nn1 + " x " + ii1 + " = " + rs1);
+                    sm1 = (sm1 + rs1);
+                    hv1 = (Math.round((rs1 / 2)) * 2);
+                    if (hv1 == rs1) {
+                        tg_text = "even";
+                    } else {
+                        tg_text = "odd";
+                    }
+                    System.out.println(nn1 + " x " + ii1 + " = " + rs1 + "  (" + tg_text + ")");
                     ii1 = (ii1 + 1);
                 }
             }
         }
+        System.out.println("Sum of all products = " + sm1);
+        System.out.println("Average product = " + (sm1 / (((lm1 - st1) + 1))));
+        if (nn1 > 12) {
+            System.out.println("That is a large multiplication table!");
+        } else {
+            System.out.println("Standard multiplication table.");
+        }
+        drawTriangle(5);
     }
 
     private static double readNumber() {

@@ -2,20 +2,54 @@ QuestLang Parse Tree
 <program>
 |-- <id-section>
 |   |-- HERO "HERO"
-|   |-- NAME "TableHero"
+|   |-- NAME "TableWizard"
 |   |-- BADGE "BADGE"
 |   \-- NUMBER "1211305566"
 |-- <decl-section>
+|   |-- <decl>
+|   |   |-- STAT
+|   |   |-- NUM_ID "nn1"
+|   |   |-- ","
+|   |   |-- NUM_ID "lm1"
+|   |   |-- ","
+|   |   |-- NUM_ID "st1"
+|   |   |-- ","
+|   |   |-- NUM_ID "ii1"
+|   |   |-- ","
+|   |   |-- NUM_ID "rs1"
+|   |   |-- ","
+|   |   |-- NUM_ID "sm1"
+|   |   |-- ","
+|   |   \-- NUM_ID "hv1"
 |   \-- <decl>
-|       |-- STAT
-|       |-- NUM_ID "nn1"
-|       |-- ","
-|       |-- NUM_ID "lm1"
-|       |-- ","
-|       |-- NUM_ID "ii1"
-|       |-- ","
-|       \-- NUM_ID "rs1"
+|       |-- TALE
+|       \-- TEXT_ID "tg$"
+|-- <trick-def>
+|   |-- DEFINE "DEFINE"
+|   |-- TRICK "TRICK"
+|   |-- NAME "header"
+|   |-- <stmt-list>
+|   |   |-- <stmt>
+|   |   |   \-- <say>
+|   |   |       |-- SAY "SAY"
+|   |   |       \-- <text-expr>
+|   |   |           \-- <text-item>
+|   |   |               \-- TEXT_LITERAL "======= MULTIPLICATION QUEST ======="
+|   |   \-- <stmt>
+|   |       \-- <draw>
+|   |           |-- DRAW "DRAW"
+|   |           |-- <shape>
+|   |           |   \-- STAR
+|   |           \-- <expr>
+|   |               \-- <term>
+|   |                   \-- <factor>
+|   |                       \-- NUMBER "28"
+|   \-- ENDTRICK "ENDTRICK"
 |-- <stmt-list>
+|   |-- <stmt>
+|   |   \-- <perform>
+|   |       |-- PERFORM "PERFORM"
+|   |       \-- NAME "header"
 |   |-- <stmt>
 |   |   \-- <ask>
 |   |       |-- ASK "ASK"
@@ -26,10 +60,25 @@ QuestLang Parse Tree
 |   |-- <stmt>
 |   |   \-- <ask>
 |   |       |-- ASK "ASK"
+|   |       |-- TEXT_LITERAL "Enter start value:"
+|   |       |-- COMMA ","
+|   |       \-- <id>
+|   |           \-- NUM_ID "st1"
+|   |-- <stmt>
+|   |   \-- <ask>
+|   |       |-- ASK "ASK"
 |   |       |-- TEXT_LITERAL "Enter table limit:"
 |   |       |-- COMMA ","
 |   |       \-- <id>
 |   |           \-- NUM_ID "lm1"
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "sm1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "0"
 |   |-- <stmt>
 |   |   \-- <assignment>
 |   |       |-- NUM_ID "ii1"
@@ -37,70 +86,229 @@ QuestLang Parse Tree
 |   |       \-- <expr>
 |   |           \-- <term>
 |   |               \-- <factor>
-|   |                   \-- NUMBER "1"
+|   |                   \-- NUM_ID "st1"
+|   |-- <stmt>
+|   |   \-- <loop>
+|   |       |-- JOURNEY
+|   |       |-- FROM "FROM"
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "st1"
+|   |       |-- TO "TO"
+|   |       |-- <expr>
+|   |       |   \-- <term>
+|   |       |       \-- <factor>
+|   |       |           \-- NUM_ID "lm1"
+|   |       |-- <stmt-list>
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "rs1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               |-- <factor>
+|   |       |   |               |   \-- NUM_ID "nn1"
+|   |       |   |               |-- MULTIPLY "*"
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "ii1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "sm1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           |-- <term>
+|   |       |   |           |   \-- <factor>
+|   |       |   |           |       \-- NUM_ID "sm1"
+|   |       |   |           |-- PLUS "+"
+|   |       |   |           \-- <term>
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUM_ID "rs1"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <assignment>
+|   |       |   |       |-- NUM_ID "hv1"
+|   |       |   |       |-- ASSIGN "="
+|   |       |   |       \-- <expr>
+|   |       |   |           \-- <term>
+|   |       |   |               |-- <factor>
+|   |       |   |               |   \-- <builtin-call>
+|   |       |   |               |       |-- ROUND "ROUND"
+|   |       |   |               |       |-- LPAREN "("
+|   |       |   |               |       |-- <expr>
+|   |       |   |               |       |   \-- <term>
+|   |       |   |               |       |       |-- <factor>
+|   |       |   |               |       |       |   \-- NUM_ID "rs1"
+|   |       |   |               |       |       |-- DIVIDE "/"
+|   |       |   |               |       |       \-- <factor>
+|   |       |   |               |       |           \-- NUMBER "2"
+|   |       |   |               |       \-- RPAREN ")"
+|   |       |   |               |-- MULTIPLY "*"
+|   |       |   |               \-- <factor>
+|   |       |   |                   \-- NUMBER "2"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <decision>
+|   |       |   |       |-- DECIDE "DECIDE"
+|   |       |   |       |-- <condition>
+|   |       |   |       |   \-- <or-condition>
+|   |       |   |       |       \-- <and-condition>
+|   |       |   |       |           \-- <not-condition>
+|   |       |   |       |               \-- <relation>
+|   |       |   |       |                   |-- <expr>
+|   |       |   |       |                   |   \-- <term>
+|   |       |   |       |                   |       \-- <factor>
+|   |       |   |       |                   |           \-- NUM_ID "hv1"
+|   |       |   |       |                   |-- EQ "=="
+|   |       |   |       |                   \-- <expr>
+|   |       |   |       |                       \-- <term>
+|   |       |   |       |                           \-- <factor>
+|   |       |   |       |                               \-- NUM_ID "rs1"
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <assignment>
+|   |       |   |       |           |-- TEXT_ID "tg$"
+|   |       |   |       |           |-- ASSIGN "="
+|   |       |   |       |           \-- <text-assign-expr>
+|   |       |   |       |               \-- <text-assign-item>
+|   |       |   |       |                   \-- TEXT_LITERAL "even"
+|   |       |   |       |-- OTHERWISE
+|   |       |   |       |-- <stmt-list>
+|   |       |   |       |   \-- <stmt>
+|   |       |   |       |       \-- <assignment>
+|   |       |   |       |           |-- TEXT_ID "tg$"
+|   |       |   |       |           |-- ASSIGN "="
+|   |       |   |       |           \-- <text-assign-expr>
+|   |       |   |       |               \-- <text-assign-item>
+|   |       |   |       |                   \-- TEXT_LITERAL "odd"
+|   |       |   |       \-- ENDDECIDE "ENDDECIDE"
+|   |       |   |-- <stmt>
+|   |       |   |   \-- <say>
+|   |       |   |       |-- SAY "SAY"
+|   |       |   |       \-- <text-expr>
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- <expr>
+|   |       |   |           |       \-- <term>
+|   |       |   |           |           \-- <factor>
+|   |       |   |           |               \-- NUM_ID "nn1"
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL " x "
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- <expr>
+|   |       |   |           |       \-- <term>
+|   |       |   |           |           \-- <factor>
+|   |       |   |           |               \-- NUM_ID "ii1"
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL " = "
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- <expr>
+|   |       |   |           |       \-- <term>
+|   |       |   |           |           \-- <factor>
+|   |       |   |           |               \-- NUM_ID "rs1"
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_LITERAL "  ("
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           |-- <text-item>
+|   |       |   |           |   \-- TEXT_ID "tg$"
+|   |       |   |           |-- AMPERSAND "&"
+|   |       |   |           \-- <text-item>
+|   |       |   |               \-- TEXT_LITERAL ")"
+|   |       |   \-- <stmt>
+|   |       |       \-- <assignment>
+|   |       |           |-- NUM_ID "ii1"
+|   |       |           |-- ASSIGN "="
+|   |       |           \-- <expr>
+|   |       |               |-- <term>
+|   |       |               |   \-- <factor>
+|   |       |               |       \-- NUM_ID "ii1"
+|   |       |               |-- PLUS "+"
+|   |       |               \-- <term>
+|   |       |                   \-- <factor>
+|   |       |                       \-- NUMBER "1"
+|   |       \-- ENDJOURNEY "ENDJOURNEY"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Sum of all products = "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       \-- <factor>
+|   |                           \-- NUM_ID "sm1"
+|   |-- <stmt>
+|   |   \-- <say>
+|   |       |-- SAY "SAY"
+|   |       \-- <text-expr>
+|   |           |-- <text-item>
+|   |           |   \-- TEXT_LITERAL "Average product = "
+|   |           |-- AMPERSAND "&"
+|   |           \-- <text-item>
+|   |               \-- <expr>
+|   |                   \-- <term>
+|   |                       |-- <factor>
+|   |                       |   \-- NUM_ID "sm1"
+|   |                       |-- DIVIDE "/"
+|   |                       \-- <factor>
+|   |                           |-- "("
+|   |                           |-- <expr>
+|   |                           |   |-- <term>
+|   |                           |   |   \-- <factor>
+|   |                           |   |       \-- NUM_ID "lm1"
+|   |                           |   |-- MINUS "-"
+|   |                           |   |-- <term>
+|   |                           |   |   \-- <factor>
+|   |                           |   |       \-- NUM_ID "st1"
+|   |                           |   |-- PLUS "+"
+|   |                           |   \-- <term>
+|   |                           |       \-- <factor>
+|   |                           |           \-- NUMBER "1"
+|   |                           \-- RPAREN ")"
+|   |-- <stmt>
+|   |   \-- <decision>
+|   |       |-- DECIDE "DECIDE"
+|   |       |-- <condition>
+|   |       |   \-- <or-condition>
+|   |       |       \-- <and-condition>
+|   |       |           \-- <not-condition>
+|   |       |               \-- <relation>
+|   |       |                   |-- <expr>
+|   |       |                   |   \-- <term>
+|   |       |                   |       \-- <factor>
+|   |       |                   |           \-- NUM_ID "nn1"
+|   |       |                   |-- GT ">"
+|   |       |                   \-- <expr>
+|   |       |                       \-- <term>
+|   |       |                           \-- <factor>
+|   |       |                               \-- NUMBER "12"
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "That is a large multiplication table!"
+|   |       |-- OTHERWISE
+|   |       |-- <stmt-list>
+|   |       |   \-- <stmt>
+|   |       |       \-- <say>
+|   |       |           |-- SAY "SAY"
+|   |       |           \-- <text-expr>
+|   |       |               \-- <text-item>
+|   |       |                   \-- TEXT_LITERAL "Standard multiplication table."
+|   |       \-- ENDDECIDE "ENDDECIDE"
 |   \-- <stmt>
-|       \-- <loop>
-|           |-- JOURNEY
-|           |-- FROM "FROM"
-|           |-- <expr>
-|           |   \-- <term>
-|           |       \-- <factor>
-|           |           \-- NUMBER "1"
-|           |-- TO "TO"
-|           |-- <expr>
-|           |   \-- <term>
-|           |       \-- <factor>
-|           |           \-- NUM_ID "lm1"
-|           |-- <stmt-list>
-|           |   |-- <stmt>
-|           |   |   \-- <assignment>
-|           |   |       |-- NUM_ID "rs1"
-|           |   |       |-- ASSIGN "="
-|           |   |       \-- <expr>
-|           |   |           \-- <term>
-|           |   |               |-- <factor>
-|           |   |               |   \-- NUM_ID "nn1"
-|           |   |               |-- MULTIPLY "*"
-|           |   |               \-- <factor>
-|           |   |                   \-- NUM_ID "ii1"
-|           |   |-- <stmt>
-|           |   |   \-- <say>
-|           |   |       |-- SAY "SAY"
-|           |   |       \-- <text-expr>
-|           |   |           |-- <text-item>
-|           |   |           |   \-- <expr>
-|           |   |           |       \-- <term>
-|           |   |           |           \-- <factor>
-|           |   |           |               \-- NUM_ID "nn1"
-|           |   |           |-- AMPERSAND "&"
-|           |   |           |-- <text-item>
-|           |   |           |   \-- TEXT_LITERAL " x "
-|           |   |           |-- AMPERSAND "&"
-|           |   |           |-- <text-item>
-|           |   |           |   \-- <expr>
-|           |   |           |       \-- <term>
-|           |   |           |           \-- <factor>
-|           |   |           |               \-- NUM_ID "ii1"
-|           |   |           |-- AMPERSAND "&"
-|           |   |           |-- <text-item>
-|           |   |           |   \-- TEXT_LITERAL " = "
-|           |   |           |-- AMPERSAND "&"
-|           |   |           \-- <text-item>
-|           |   |               \-- <expr>
-|           |   |                   \-- <term>
-|           |   |                       \-- <factor>
-|           |   |                           \-- NUM_ID "rs1"
-|           |   \-- <stmt>
-|           |       \-- <assignment>
-|           |           |-- NUM_ID "ii1"
-|           |           |-- ASSIGN "="
-|           |           \-- <expr>
-|           |               |-- <term>
-|           |               |   \-- <factor>
-|           |               |       \-- NUM_ID "ii1"
-|           |               |-- PLUS "+"
-|           |               \-- <term>
-|           |                   \-- <factor>
-|           |                       \-- NUMBER "1"
-|           \-- ENDJOURNEY "ENDJOURNEY"
+|       \-- <draw>
+|           |-- DRAW "DRAW"
+|           |-- <shape>
+|           |   \-- TRIANGLE
+|           \-- <expr>
+|               \-- <term>
+|                   \-- <factor>
+|                       \-- NUMBER "5"
 \-- THEEND "THEEND"
