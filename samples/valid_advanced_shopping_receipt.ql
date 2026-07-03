@@ -1,5 +1,7 @@
-HERO ShopMaster
+HERO SulimanAlkatheri
 BADGE 1211305566
+NOTE Student: ALKATHERI SULAIMAN ALI MAHDI
+NOTE Student ID: 1211305566
 
 STAT ct1, pr1, qt1, ln1, sb1, ds1, tx1, fn1, pm1, rc1
 TALE nm$, pn$

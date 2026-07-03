@@ -1,4 +1,7 @@
-HERO Omar
+HERO KhaledDehnin
+BADGE 2432463
+NOTE Student: DEHNIN KHALED
+NOTE Student ID: 243UC2463N
 STAT aa1, aa1
 
 aa1 = 10

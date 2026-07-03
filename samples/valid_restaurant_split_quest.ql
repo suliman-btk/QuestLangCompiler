@@ -1,5 +1,7 @@
-HERO FeastPlanner
-BADGE 1211305566
+HERO KhaledDehnin
+BADGE 2432463
+NOTE Student: DEHNIN KHALED
+NOTE Student ID: 243UC2463N
 
 STAT gs1, ml1, pr1, qt1, ln1, sb1, tp1, fn1, ea1, rc1, mx1, mn1, tm1, qs1, cp1, ch1
 TALE nm$, fd$

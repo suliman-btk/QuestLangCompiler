@@ -1,5 +1,7 @@
-HERO CalcMaster
-BADGE 1211305566
+HERO KhaledDehnin
+BADGE 2432463
+NOTE Student: DEHNIN KHALED
+NOTE Student ID: 243UC2463N
 
 NOTE Calculator with a DIFFERENT operator chosen between each number (left to right)
 STAT nn1, rm1, xx1, op1, ac1, gc1, mm1, cn1

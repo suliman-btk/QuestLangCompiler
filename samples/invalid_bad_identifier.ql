@@ -1,4 +1,7 @@
-HERO Omar
+HERO SulimanAlkatheri
+BADGE 1211305566
+NOTE Student: ALKATHERI SULAIMAN ALI MAHDI
+NOTE Student ID: 1211305566
 STAT aa1
 
 score1 = aa1 + 5

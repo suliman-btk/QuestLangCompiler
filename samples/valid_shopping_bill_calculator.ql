@@ -1,5 +1,7 @@
-HERO ShopKeeper
+HERO SulimanAlkatheri
 BADGE 1211305566
+NOTE Student: ALKATHERI SULAIMAN ALI MAHDI
+NOTE Student ID: 1211305566
 
 NOTE Advanced shopping bill with membership, tiers, tax, change
 STAT ni1, pr1, qt1, ln1, sb1, ds1, tx1, fn1, mx1, mn1, mt1, cp1, ch1

@@ -1,5 +1,7 @@
-HERO TableWizard
-BADGE 1211305566
+HERO AhmedBalfaqih
+BADGE 1221304386
+NOTE Student: BALFAQIH AHMED KHALED AHMED
+NOTE Student ID: 1221304386
 
 NOTE Advanced multiplication table with even/odd tagging and sum
 STAT nn1, lm1, st1, ii1, rs1, sm1, hv1

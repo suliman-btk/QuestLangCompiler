@@ -1,5 +1,7 @@
-HERO GradeMaster
-BADGE 1211305566
+HERO AhmedBalfaqih
+BADGE 1221304386
+NOTE Student: BALFAQIH AHMED KHALED AHMED
+NOTE Student ID: 1221304386
 
 NOTE MMU-graded checker with credit hours and credit-weighted GPA
 STAT ns1, sc1, cr1, qp1, tw1, tc1, gp1, rg1, tt1, av1, mx1, mn1, ps1

@@ -1,4 +1,7 @@
 HERO AhmedBalfaqih
+BADGE 1221304386
+NOTE Student: BALFAQIH AHMED KHALED AHMED
+NOTE Student ID: 1221304386
 
 NOTE =====================================================
 NOTE  MoneyQuest : Advanced Personal Finance Planner

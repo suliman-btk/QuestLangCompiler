@@ -1,5 +1,7 @@
-HERO ScholarQuest
-BADGE 1211305566
+HERO KhaledDehnin
+BADGE 2432463
+NOTE Student: DEHNIN KHALED
+NOTE Student ID: 243UC2463N
 
 STAT cs1, cr1, mk1, tc1, ws1, av1, fe1, sp1, rm1, st1, hr1, wk1, ii1, rv1, mx1, mn1, gp1, id1, bo1
 TALE nm$, cn$, el$
