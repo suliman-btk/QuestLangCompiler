@@ -1,0 +1,26 @@
+QuestLang Scanner Output
+------------------------
+HERO           HERO                 at 1:1
+NAME           SulimanAlkatheri     at 1:6
+BADGE          BADGE                at 2:1
+NUMBER         1211305566           at 2:7
+STAT           STAT                 at 5:1
+NUM_ID         aa1                  at 5:6
+NUM_ID         aa1                  at 7:1
+ASSIGN         =                    at 7:5
+NUMBER         1                    at 7:7
+CHOOSE         CHOOSE               at 8:1
+NUM_ID         aa1                  at 8:8
+OPTION         OPTION               at 9:5
+NUMBER         1                    at 9:12
+COLON          :                    at 9:14
+SAY            SAY                  at 10:9
+TEXT_LITERAL   First                at 10:13
+OPTION         OPTION               at 11:5
+NUMBER         1                    at 11:12
+COLON          :                    at 11:14
+SAY            SAY                  at 12:9
+TEXT_LITERAL   Duplicate            at 12:13
+ENDCHOOSE      ENDCHOOSE            at 13:1
+THEEND         THEEND               at 15:1
+EOF            at 16:1

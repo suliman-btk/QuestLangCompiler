@@ -1,0 +1,15 @@
+QuestLang Scanner Output
+------------------------
+HERO           HERO                 at 1:1
+NAME           KhaledDehnin         at 1:6
+BADGE          BADGE                at 2:1
+NUMBER         2432463              at 2:7
+STAT           STAT                 at 5:1
+NUM_ID         aa1                  at 5:6
+COMMA          ,                    at 5:9
+NUM_ID         aa1                  at 5:11
+NUM_ID         aa1                  at 7:1
+ASSIGN         =                    at 7:5
+NUMBER         10                   at 7:7
+THEEND         THEEND               at 9:1
+EOF            at 10:1

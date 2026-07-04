@@ -2,7 +2,7 @@ QuestLang Parse Tree
 <program>
 |-- <id-section>
 |   |-- HERO "HERO"
-|   |-- NAME "ShopKeeper"
+|   |-- NAME "SulimanAlkatheri"
 |   |-- BADGE "BADGE"
 |   \-- NUMBER "1211305566"
 |-- <decl-section>

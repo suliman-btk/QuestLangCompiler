@@ -1,0 +1,23 @@
+QuestLang Parse Tree
+<program>
+|-- <id-section>
+|   |-- HERO "HERO"
+|   |-- NAME "KhaledDehnin"
+|   |-- BADGE "BADGE"
+|   \-- NUMBER "2432463"
+|-- <decl-section>
+|   \-- <decl>
+|       |-- STAT
+|       |-- NUM_ID "aa1"
+|       |-- ","
+|       \-- NUM_ID "aa1"
+|-- <stmt-list>
+|   \-- <stmt>
+|       \-- <assignment>
+|           |-- NUM_ID "aa1"
+|           |-- ASSIGN "="
+|           \-- <expr>
+|               \-- <term>
+|                   \-- <factor>
+|                       \-- NUMBER "10"
+\-- THEEND "THEEND"

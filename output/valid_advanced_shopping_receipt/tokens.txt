@@ -1,206 +1,206 @@
 QuestLang Scanner Output
 ------------------------
 HERO           HERO                 at 1:1
-NAME           ShopMaster           at 1:6
+NAME           SulimanAlkatheri     at 1:6
 BADGE          BADGE                at 2:1
 NUMBER         1211305566           at 2:7
-STAT           STAT                 at 4:1
-NUM_ID         ct1                  at 4:6
-COMMA          ,                    at 4:9
-NUM_ID         pr1                  at 4:11
-COMMA          ,                    at 4:14
-NUM_ID         qt1                  at 4:16
-COMMA          ,                    at 4:19
-NUM_ID         ln1                  at 4:21
-COMMA          ,                    at 4:24
-NUM_ID         sb1                  at 4:26
-COMMA          ,                    at 4:29
-NUM_ID         ds1                  at 4:31
-COMMA          ,                    at 4:34
-NUM_ID         tx1                  at 4:36
-COMMA          ,                    at 4:39
-NUM_ID         fn1                  at 4:41
-COMMA          ,                    at 4:44
-NUM_ID         pm1                  at 4:46
-COMMA          ,                    at 4:49
-NUM_ID         rc1                  at 4:51
-TALE           TALE                 at 5:1
-TEXT_ID        nm$                  at 5:6
-COMMA          ,                    at 5:9
-TEXT_ID        pn$                  at 5:11
-DEFINE         DEFINE               at 7:1
-TRICK          TRICK                at 7:8
-NAME           header               at 7:14
-SAY            SAY                  at 8:5
-TEXT_LITERAL   ===== QUEST SHOP RECEIPT ===== at 8:9
-DRAW           DRAW                 at 9:5
-STAR           STAR                 at 9:10
-NUMBER         25                   at 9:15
-ENDTRICK       ENDTRICK             at 10:1
-PERFORM        PERFORM              at 12:1
-NAME           header               at 12:9
-ASK            ASK                  at 14:1
-TEXT_LITERAL   Enter customer name:  at 14:5
-COMMA          ,                    at 14:28
-TEXT_ID        nm$                  at 14:30
-ASK            ASK                  at 15:1
-TEXT_LITERAL   How many products:   at 15:5
-COMMA          ,                    at 15:26
-NUM_ID         ct1                  at 15:28
-NUM_ID         sb1                  at 17:1
-ASSIGN         =                    at 17:5
-NUMBER         0                    at 17:7
-NUM_ID         rc1                  at 18:1
-ASSIGN         =                    at 18:5
-LUCK           LUCK                 at 18:7
-LPAREN         (                    at 18:11
-NUMBER         1000                 at 18:12
-COMMA          ,                    at 18:16
-NUMBER         9999                 at 18:18
-RPAREN         )                    at 18:22
-GRIND          GRIND                at 20:1
-NUM_ID         ct1                  at 20:7
-TIMES          TIMES                at 20:11
-ASK            ASK                  at 21:5
-TEXT_LITERAL   Enter product name:  at 21:9
-COMMA          ,                    at 21:31
-TEXT_ID        pn$                  at 21:33
-ASK            ASK                  at 22:5
-TEXT_LITERAL   Enter item price:    at 22:9
-COMMA          ,                    at 22:29
-NUM_ID         pr1                  at 22:31
+STAT           STAT                 at 6:1
+NUM_ID         ct1                  at 6:6
+COMMA          ,                    at 6:9
+NUM_ID         pr1                  at 6:11
+COMMA          ,                    at 6:14
+NUM_ID         qt1                  at 6:16
+COMMA          ,                    at 6:19
+NUM_ID         ln1                  at 6:21
+COMMA          ,                    at 6:24
+NUM_ID         sb1                  at 6:26
+COMMA          ,                    at 6:29
+NUM_ID         ds1                  at 6:31
+COMMA          ,                    at 6:34
+NUM_ID         tx1                  at 6:36
+COMMA          ,                    at 6:39
+NUM_ID         fn1                  at 6:41
+COMMA          ,                    at 6:44
+NUM_ID         pm1                  at 6:46
+COMMA          ,                    at 6:49
+NUM_ID         rc1                  at 6:51
+TALE           TALE                 at 7:1
+TEXT_ID        nm$                  at 7:6
+COMMA          ,                    at 7:9
+TEXT_ID        pn$                  at 7:11
+DEFINE         DEFINE               at 9:1
+TRICK          TRICK                at 9:8
+NAME           header               at 9:14
+SAY            SAY                  at 10:5
+TEXT_LITERAL   ===== QUEST SHOP RECEIPT ===== at 10:9
+DRAW           DRAW                 at 11:5
+STAR           STAR                 at 11:10
+NUMBER         25                   at 11:15
+ENDTRICK       ENDTRICK             at 12:1
+PERFORM        PERFORM              at 14:1
+NAME           header               at 14:9
+ASK            ASK                  at 16:1
+TEXT_LITERAL   Enter customer name:  at 16:5
+COMMA          ,                    at 16:28
+TEXT_ID        nm$                  at 16:30
+ASK            ASK                  at 17:1
+TEXT_LITERAL   How many products:   at 17:5
+COMMA          ,                    at 17:26
+NUM_ID         ct1                  at 17:28
+NUM_ID         sb1                  at 19:1
+ASSIGN         =                    at 19:5
+NUMBER         0                    at 19:7
+NUM_ID         rc1                  at 20:1
+ASSIGN         =                    at 20:5
+LUCK           LUCK                 at 20:7
+LPAREN         (                    at 20:11
+NUMBER         1000                 at 20:12
+COMMA          ,                    at 20:16
+NUMBER         9999                 at 20:18
+RPAREN         )                    at 20:22
+GRIND          GRIND                at 22:1
+NUM_ID         ct1                  at 22:7
+TIMES          TIMES                at 22:11
 ASK            ASK                  at 23:5
-TEXT_LITERAL   Enter quantity:      at 23:9
-COMMA          ,                    at 23:27
-NUM_ID         qt1                  at 23:29
-NUM_ID         ln1                  at 25:5
-ASSIGN         =                    at 25:9
-NUM_ID         pr1                  at 25:11
-MULTIPLY       *                    at 25:15
-NUM_ID         qt1                  at 25:17
-NUM_ID         sb1                  at 26:5
-ASSIGN         =                    at 26:9
-NUM_ID         sb1                  at 26:11
-PLUS           +                    at 26:15
-NUM_ID         ln1                  at 26:17
-SAY            SAY                  at 28:5
-TEXT_LITERAL   Product:             at 28:9
-AMPERSAND      &                    at 28:21
-TEXT_ID        pn$                  at 28:23
-SAY            SAY                  at 29:5
-TEXT_LITERAL   Line total:          at 29:9
-AMPERSAND      &                    at 29:24
-NUM_ID         ln1                  at 29:26
-ENDGRIND       ENDGRIND             at 30:1
-DECIDE         DECIDE               at 32:1
-NUM_ID         sb1                  at 32:8
-GTE            >=                   at 32:12
-NUMBER         300                  at 32:15
-NUM_ID         ds1                  at 33:5
-ASSIGN         =                    at 33:9
-NUM_ID         sb1                  at 33:11
-MULTIPLY       *                    at 33:15
-NUMBER         0.15                 at 33:17
-OTHERWISE      OTHERWISE            at 34:1
-DECIDE         DECIDE               at 35:5
-NUM_ID         sb1                  at 35:12
-GTE            >=                   at 35:16
-NUMBER         100                  at 35:19
-NUM_ID         ds1                  at 36:9
-ASSIGN         =                    at 36:13
-NUM_ID         sb1                  at 36:15
-MULTIPLY       *                    at 36:19
-NUMBER         0.10                 at 36:21
-OTHERWISE      OTHERWISE            at 37:5
+TEXT_LITERAL   Enter product name:  at 23:9
+COMMA          ,                    at 23:31
+TEXT_ID        pn$                  at 23:33
+ASK            ASK                  at 24:5
+TEXT_LITERAL   Enter item price:    at 24:9
+COMMA          ,                    at 24:29
+NUM_ID         pr1                  at 24:31
+ASK            ASK                  at 25:5
+TEXT_LITERAL   Enter quantity:      at 25:9
+COMMA          ,                    at 25:27
+NUM_ID         qt1                  at 25:29
+NUM_ID         ln1                  at 27:5
+ASSIGN         =                    at 27:9
+NUM_ID         pr1                  at 27:11
+MULTIPLY       *                    at 27:15
+NUM_ID         qt1                  at 27:17
+NUM_ID         sb1                  at 28:5
+ASSIGN         =                    at 28:9
+NUM_ID         sb1                  at 28:11
+PLUS           +                    at 28:15
+NUM_ID         ln1                  at 28:17
+SAY            SAY                  at 30:5
+TEXT_LITERAL   Product:             at 30:9
+AMPERSAND      &                    at 30:21
+TEXT_ID        pn$                  at 30:23
+SAY            SAY                  at 31:5
+TEXT_LITERAL   Line total:          at 31:9
+AMPERSAND      &                    at 31:24
+NUM_ID         ln1                  at 31:26
+ENDGRIND       ENDGRIND             at 32:1
+DECIDE         DECIDE               at 34:1
+NUM_ID         sb1                  at 34:8
+GTE            >=                   at 34:12
+NUMBER         300                  at 34:15
+NUM_ID         ds1                  at 35:5
+ASSIGN         =                    at 35:9
+NUM_ID         sb1                  at 35:11
+MULTIPLY       *                    at 35:15
+NUMBER         0.15                 at 35:17
+OTHERWISE      OTHERWISE            at 36:1
+DECIDE         DECIDE               at 37:5
+NUM_ID         sb1                  at 37:12
+GTE            >=                   at 37:16
+NUMBER         100                  at 37:19
 NUM_ID         ds1                  at 38:9
 ASSIGN         =                    at 38:13
-NUMBER         0                    at 38:15
-ENDDECIDE      ENDDECIDE            at 39:5
-ENDDECIDE      ENDDECIDE            at 40:1
-NUM_ID         tx1                  at 42:1
-ASSIGN         =                    at 42:5
-LPAREN         (                    at 42:7
-NUM_ID         sb1                  at 42:8
-MINUS          -                    at 42:12
-NUM_ID         ds1                  at 42:14
-RPAREN         )                    at 42:17
-MULTIPLY       *                    at 42:19
-NUMBER         0.06                 at 42:21
-NUM_ID         fn1                  at 43:1
-ASSIGN         =                    at 43:5
-NUM_ID         sb1                  at 43:7
-MINUS          -                    at 43:11
-NUM_ID         ds1                  at 43:13
-PLUS           +                    at 43:17
-NUM_ID         tx1                  at 43:19
-ASK            ASK                  at 45:1
-TEXT_LITERAL   Payment method 1 Cash, 2 Card, 3 E-wallet:  at 45:5
-COMMA          ,                    at 45:50
-NUM_ID         pm1                  at 45:52
-CHOOSE         CHOOSE               at 47:1
-NUM_ID         pm1                  at 47:8
-OPTION         OPTION               at 48:5
-NUMBER         1                    at 48:12
-COLON          :                    at 48:13
-SAY            SAY                  at 49:9
-TEXT_LITERAL   Payment method: Cash at 49:13
+NUM_ID         sb1                  at 38:15
+MULTIPLY       *                    at 38:19
+NUMBER         0.10                 at 38:21
+OTHERWISE      OTHERWISE            at 39:5
+NUM_ID         ds1                  at 40:9
+ASSIGN         =                    at 40:13
+NUMBER         0                    at 40:15
+ENDDECIDE      ENDDECIDE            at 41:5
+ENDDECIDE      ENDDECIDE            at 42:1
+NUM_ID         tx1                  at 44:1
+ASSIGN         =                    at 44:5
+LPAREN         (                    at 44:7
+NUM_ID         sb1                  at 44:8
+MINUS          -                    at 44:12
+NUM_ID         ds1                  at 44:14
+RPAREN         )                    at 44:17
+MULTIPLY       *                    at 44:19
+NUMBER         0.06                 at 44:21
+NUM_ID         fn1                  at 45:1
+ASSIGN         =                    at 45:5
+NUM_ID         sb1                  at 45:7
+MINUS          -                    at 45:11
+NUM_ID         ds1                  at 45:13
+PLUS           +                    at 45:17
+NUM_ID         tx1                  at 45:19
+ASK            ASK                  at 47:1
+TEXT_LITERAL   Payment method 1 Cash, 2 Card, 3 E-wallet:  at 47:5
+COMMA          ,                    at 47:50
+NUM_ID         pm1                  at 47:52
+CHOOSE         CHOOSE               at 49:1
+NUM_ID         pm1                  at 49:8
 OPTION         OPTION               at 50:5
-NUMBER         2                    at 50:12
+NUMBER         1                    at 50:12
 COLON          :                    at 50:13
 SAY            SAY                  at 51:9
-TEXT_LITERAL   Payment method: Card at 51:13
+TEXT_LITERAL   Payment method: Cash at 51:13
 OPTION         OPTION               at 52:5
-NUMBER         3                    at 52:12
+NUMBER         2                    at 52:12
 COLON          :                    at 52:13
 SAY            SAY                  at 53:9
-TEXT_LITERAL   Payment method: E-wallet at 53:13
-OTHERWISE      OTHERWISE            at 54:5
+TEXT_LITERAL   Payment method: Card at 53:13
+OPTION         OPTION               at 54:5
+NUMBER         3                    at 54:12
+COLON          :                    at 54:13
 SAY            SAY                  at 55:9
-TEXT_LITERAL   Payment method: Unknown at 55:13
-ENDCHOOSE      ENDCHOOSE            at 56:1
-SAY            SAY                  at 58:1
-TEXT_LITERAL   Receipt number:      at 58:5
-AMPERSAND      &                    at 58:24
-NUM_ID         rc1                  at 58:26
-SAY            SAY                  at 59:1
-TEXT_LITERAL   Customer:            at 59:5
-AMPERSAND      &                    at 59:18
-TEXT_ID        nm$                  at 59:20
+TEXT_LITERAL   Payment method: E-wallet at 55:13
+OTHERWISE      OTHERWISE            at 56:5
+SAY            SAY                  at 57:9
+TEXT_LITERAL   Payment method: Unknown at 57:13
+ENDCHOOSE      ENDCHOOSE            at 58:1
 SAY            SAY                  at 60:1
-TEXT_LITERAL   Subtotal:            at 60:5
-AMPERSAND      &                    at 60:18
-NUM_ID         sb1                  at 60:20
+TEXT_LITERAL   Receipt number:      at 60:5
+AMPERSAND      &                    at 60:24
+NUM_ID         rc1                  at 60:26
 SAY            SAY                  at 61:1
-TEXT_LITERAL   Discount:            at 61:5
+TEXT_LITERAL   Customer:            at 61:5
 AMPERSAND      &                    at 61:18
-NUM_ID         ds1                  at 61:20
+TEXT_ID        nm$                  at 61:20
 SAY            SAY                  at 62:1
-TEXT_LITERAL   Tax:                 at 62:5
-AMPERSAND      &                    at 62:13
-NUM_ID         tx1                  at 62:15
+TEXT_LITERAL   Subtotal:            at 62:5
+AMPERSAND      &                    at 62:18
+NUM_ID         sb1                  at 62:20
 SAY            SAY                  at 63:1
-TEXT_LITERAL   Final bill:          at 63:5
-AMPERSAND      &                    at 63:20
-NUM_ID         fn1                  at 63:22
-DECIDE         DECIDE               at 65:1
-NUM_ID         fn1                  at 65:8
-GTE            >=                   at 65:12
-NUMBER         300                  at 65:15
-SAY            SAY                  at 66:5
-TEXT_LITERAL   Bill level: High value customer at 66:9
-OTHERWISE      OTHERWISE            at 67:1
-DECIDE         DECIDE               at 68:5
-NUM_ID         fn1                  at 68:12
-GTE            >=                   at 68:16
-NUMBER         100                  at 68:19
-SAY            SAY                  at 69:9
-TEXT_LITERAL   Bill level: Normal customer at 69:13
-OTHERWISE      OTHERWISE            at 70:5
+TEXT_LITERAL   Discount:            at 63:5
+AMPERSAND      &                    at 63:18
+NUM_ID         ds1                  at 63:20
+SAY            SAY                  at 64:1
+TEXT_LITERAL   Tax:                 at 64:5
+AMPERSAND      &                    at 64:13
+NUM_ID         tx1                  at 64:15
+SAY            SAY                  at 65:1
+TEXT_LITERAL   Final bill:          at 65:5
+AMPERSAND      &                    at 65:20
+NUM_ID         fn1                  at 65:22
+DECIDE         DECIDE               at 67:1
+NUM_ID         fn1                  at 67:8
+GTE            >=                   at 67:12
+NUMBER         300                  at 67:15
+SAY            SAY                  at 68:5
+TEXT_LITERAL   Bill level: High value customer at 68:9
+OTHERWISE      OTHERWISE            at 69:1
+DECIDE         DECIDE               at 70:5
+NUM_ID         fn1                  at 70:12
+GTE            >=                   at 70:16
+NUMBER         100                  at 70:19
 SAY            SAY                  at 71:9
-TEXT_LITERAL   Bill level: Small purchase at 71:13
-ENDDECIDE      ENDDECIDE            at 72:5
-ENDDECIDE      ENDDECIDE            at 73:1
-SAY            SAY                  at 75:1
-TEXT_LITERAL   ===== THANK YOU ===== at 75:5
-THEEND         THEEND               at 77:1
-EOF            at 78:1
+TEXT_LITERAL   Bill level: Normal customer at 71:13
+OTHERWISE      OTHERWISE            at 72:5
+SAY            SAY                  at 73:9
+TEXT_LITERAL   Bill level: Small purchase at 73:13
+ENDDECIDE      ENDDECIDE            at 74:5
+ENDDECIDE      ENDDECIDE            at 75:1
+SAY            SAY                  at 77:1
+TEXT_LITERAL   ===== THANK YOU ===== at 77:5
+THEEND         THEEND               at 79:1
+EOF            at 80:1

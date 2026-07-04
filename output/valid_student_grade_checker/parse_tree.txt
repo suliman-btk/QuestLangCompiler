@@ -2,9 +2,9 @@ QuestLang Parse Tree
 <program>
 |-- <id-section>
 |   |-- HERO "HERO"
-|   |-- NAME "GradeMaster"
+|   |-- NAME "AhmedBalfaqih"
 |   |-- BADGE "BADGE"
-|   \-- NUMBER "1211305566"
+|   \-- NUMBER "1221304386"
 |-- <decl-section>
 |   |-- <decl>
 |   |   |-- STAT

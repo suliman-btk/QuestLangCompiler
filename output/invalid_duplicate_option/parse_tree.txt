@@ -1,0 +1,51 @@
+QuestLang Parse Tree
+<program>
+|-- <id-section>
+|   |-- HERO "HERO"
+|   |-- NAME "SulimanAlkatheri"
+|   |-- BADGE "BADGE"
+|   \-- NUMBER "1211305566"
+|-- <decl-section>
+|   \-- <decl>
+|       |-- STAT
+|       \-- NUM_ID "aa1"
+|-- <stmt-list>
+|   |-- <stmt>
+|   |   \-- <assignment>
+|   |       |-- NUM_ID "aa1"
+|   |       |-- ASSIGN "="
+|   |       \-- <expr>
+|   |           \-- <term>
+|   |               \-- <factor>
+|   |                   \-- NUMBER "1"
+|   \-- <stmt>
+|       \-- <choose>
+|           |-- CHOOSE "CHOOSE"
+|           |-- <expr>
+|           |   \-- <term>
+|           |       \-- <factor>
+|           |           \-- NUM_ID "aa1"
+|           |-- <option>
+|           |   |-- OPTION "OPTION"
+|           |   |-- NUMBER "1"
+|           |   |-- COLON ":"
+|           |   \-- <stmt-list>
+|           |       \-- <stmt>
+|           |           \-- <say>
+|           |               |-- SAY "SAY"
+|           |               \-- <text-expr>
+|           |                   \-- <text-item>
+|           |                       \-- TEXT_LITERAL "First"
+|           |-- <option>
+|           |   |-- OPTION "OPTION"
+|           |   |-- NUMBER "1"
+|           |   |-- COLON ":"
+|           |   \-- <stmt-list>
+|           |       \-- <stmt>
+|           |           \-- <say>
+|           |               |-- SAY "SAY"
+|           |               \-- <text-expr>
+|           |                   \-- <text-item>
+|           |                       \-- TEXT_LITERAL "Duplicate"
+|           \-- ENDCHOOSE "ENDCHOOSE"
+\-- THEEND "THEEND"
